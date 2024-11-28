@@ -1,2 +1,2 @@
 # DataDito
-BAU students doing an Enterprise Application project
+BAU students working on an  Enterprise Application project
