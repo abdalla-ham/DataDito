@@ -1,0 +1,55 @@
+* {
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    height: 100vh;
+}
+
+.page-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    margin-left: 20px;
+}
+
+.page-form-input {
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+}
+
+#resetPasswordButton {
+    background-color: darkred;
+    color: white;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#resetPasswordButton:hover {
+    background-color: crimson;
+}
+
+#logo {
+    height: 30vmin;
+    width: auto;
+    margin-right: 20px;
+    margin-left: 30px;
+}

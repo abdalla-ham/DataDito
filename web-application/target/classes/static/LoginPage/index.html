@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataDito</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div>
+    <div class="page-head">
+        <img id="logo" src="../images/Logo.png" alt="Logo" >
+        <h1 style="color: darkred">Data</h1>
+        <h1 style="color: red">Dito</h1>
+    </div>
+    <div class="page-body">
+        <form id="loginForm">
+            <input type="text" id="phone" name="phone" placeholder="Phone Number"
+                   pattern="^5[0-9]{9}$" minlength="9" maxlength="11" required>
+            <span class="error-box">Your phone number must be in the format 5xx-xxx-xxxx and 10 digits.</span>
+            <input type="password" id="password" name="password" placeholder="Password"
+            minlength="8" maxlength="32" required>
+            <span class="error-box" id="password-error">Your password should include 8 to 32 characters.</span>
+            <br>
+            <input type="checkbox" value="Remember Me" id="rememberMe">
+            <label for="rememberMe">Remember me</label>
+            <br>
+            <button type="submit" id="loginButton">Login</button>
+        </form>
+    </div>
+    <div class="page-footer">
+        <div class="label-container">
+            <a href="../ForgotPasswordPage/index.html">Forgot Password?</a>
+        </div>
+        <div class="label-container">
+            <a href="../RegisterPage/index.html">Register</a>
+        </div>
+    </div>
+</div>
+<script src="./js/script.js" type="module"></script>
+</body>
+</html>
