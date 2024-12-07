@@ -13,7 +13,7 @@ body {
     height: 100vh;
 }
 
-.page-form {
+.forgot-password-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +22,7 @@ body {
     margin-left: 20px;
 }
 
-.page-form-input {
+.forgot-password-form-input {
     width: 100%;
     height: 35px;
     border-radius: 5px;
@@ -48,7 +48,7 @@ body {
 }
 
 #logo {
-    height: 30vmin;
+    height: 15vmin;
     width: auto;
     margin-right: 20px;
     margin-left: 30px;

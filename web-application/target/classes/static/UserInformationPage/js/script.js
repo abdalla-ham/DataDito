@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const dataUsageBar = document.getElementById("data-bar");
     const minutesUsageBar = document.getElementById("minutes-bar");
     const smsUsageBar = document.getElementById("sms-bar");
@@ -15,19 +15,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const totalMinutes = 1000;
     const totalSMS = 250;
 
-    function updateDataUsage(used){
+    function updateDataUsage(used) {
         const percentage = (used / totalData) * 100
         dataUsageBar.style.width = `${percentage}%`;
         dataUsageText.textContent = `Used ${usedData} GB / ${totalData} GB`
     }
 
-    function updateMinutesUsage(used){
+    function updateMinutesUsage(used) {
         const percentage = (used / totalMinutes) * 100
         minutesUsageBar.style.width = `${percentage}%`;
         minutesUsageText.textContent = `Used ${usedMinutes} Minutes / ${totalMinutes} Minutes`
     }
 
-    function updateSMSUsage(used){
+    function updateSMSUsage(used) {
         const percentage = (used / totalSMS) * 100
         smsUsageBar.style.width = `${percentage}%`;
         smsUsageText.textContent = `Used ${usedSMS} SMS / ${totalSMS} SMS`
@@ -39,8 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (usedData < totalData) {
             usedData += 5;
             updateDataUsage(usedData)
-        }
-        else {
+        } else {
             clearInterval(dataUsageSimulation);
         }
     }, 1000)
@@ -49,8 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (usedMinutes < totalMinutes) {
             usedMinutes += 20;
             updateMinutesUsage(usedMinutes)
-        }
-        else {
+        } else {
             clearInterval(minutesUsageSimulation);
         }
     }, 1000)
@@ -59,8 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (usedSMS < totalSMS) {
             usedSMS += 1;
             updateSMSUsage(usedSMS)
-        }
-        else {
+        } else {
             clearInterval(smsUsageSimulation);
         }
     }, 1000)

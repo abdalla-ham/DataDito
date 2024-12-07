@@ -10,9 +10,11 @@
 </head>
 <body class="page-body">
 <div class="page-body">
-    <form class="page-form">
-        <input class="page-form-input" type="text" id="nid" name="nid" placeholder="National ID">
-        <input class="page-form-input" type="text" id="email" name="email" placeholder="Email">
+    <form id="forgot-password-form" class="forgot-password-form">
+        <input class="forgot-password-form-input" type="text" id="nid" name="nid" placeholder="National ID"
+        required minlength="10" maxlength="12" pattern="\d{11}">
+        <input class="forgot-password-form-input" type="text" id="email" name="email" placeholder="Email"
+        required minlength="12" maxlength="50">
         <button type="submit" class="btn" id="resetPasswordButton">Send Recovery Email</button>
     </form>
 </div>
