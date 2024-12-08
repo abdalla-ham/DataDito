@@ -1,3 +1,6 @@
+### Kafka portion (temporary solution until jar is published to maven repo) ###
+src/main/java/com/i2i/datadito/kafka/
+
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
