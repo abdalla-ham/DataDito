@@ -25,3 +25,50 @@ I added a this to the VM options :
 --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
 
 Start with Running InsertingTest file, then run the VoltDbOperatorsTest file
+
+/////////////////////////
+Creat new VM instance ( Ubunto , E2, 20 GB , Allow everything in the Firewall section).
+You also need.. 
+To create a firewall rule for VoltDB's default port (21212), follow these steps:
+
+Using the GCP Console
+Navigate to VPC Networks:
+
+Go to the VPC networks page in the GCP Console.
+Create a New Firewall Rule:
+
+Click "Firewall rules" from the left-hand menu.
+Click "Create Firewall Rule".
+Configure the Firewall Rule:
+
+Name: Enter allow-voltdb-21212.
+- Network: Select the appropriate VPC network (e.g., default or your custom network).
+- Priority: Use the default 1000 unless you need a different priority.
+- Direction of Traffic: Select Ingress.
+- Action on Match: Select Allow.
+- Targets: Choose the appropriate target option:
+All instances in the network or
+Specified target tags (e.g., voltdb-server).
+- Source Filters:
+- Set Source IP ranges to 0.0.0.0/0 to allow traffic from any IP, or restrict it to specific trusted IP ranges.
+- Protocols and Ports:
+Select Specified protocols and ports.
+- Enable TCP and enter 21212.
+- Save:
+
+Click "Create" to save the rule.
+
+IN SSH :
+- sudo apt update
+- sudo apt install docker.io
+- sudo systemctl start docker
+- sudo systemctl enable docker
+- docker --version
+- sudo docker pull voltdb/voltdb-community
+- sudo docker ps
+- sudo docker ps -a
+- sudo docker run -it --rm -p 21212:21212 -p 8080:8080 -p 55004:55004 -v voltdb_data:/var/voltdb -e HOST_COUNT=1 voltdb/voltdb-community voltdb start -c 1 --ignore=thp
+- sudo docker exec -it node1 bash  //// node1 is the container name OR container id
+- sqlcmd
+
+
