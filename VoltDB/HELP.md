@@ -7,11 +7,12 @@ Maybe this can help you understand some stuff regarding running the voltDB codes
 5. to connect voltDB to the DBeaver:
    Create new driver :
    upload the jar file, I used (voltdbclient-14.0.1.jar)
-                      I named it: VoltDB 
-                      class name: org.voltdb.jdbc.Driver
-                      URL template: jdbc:voltdb://localhost:21212
-                      default port : 21212
+                      I named it: VoltDB ,
+                      class name: org.voltdb.jdbc.Driver   ,
+                      URL template: jdbc:voltdb://localhost:21212   ,
+                      default port : 21212   ,
                       no authentication , Allow Empty Password , Thread safe driver
+   ------> create the driver then create a connection to it.
    
 7. after that you can run the codes that I uploaded
 I added a this to the VM options :
