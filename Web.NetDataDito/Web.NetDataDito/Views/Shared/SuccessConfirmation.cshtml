@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+@{
+    Layout = null;
+    <!-- Disable the main layout -->
+}
+<html>
+<head>
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container text-center" style="margin-top: 50px;">
+        <h3>Password Recovery</h3>
+        <p>An email with password recovery instructions has been sent to your email address.</p>
+        <a href="@Url.Action("Login", "Account")" class="btn btn-primary">Back to Login</a>
+    </div>
+</body>
+</html>
