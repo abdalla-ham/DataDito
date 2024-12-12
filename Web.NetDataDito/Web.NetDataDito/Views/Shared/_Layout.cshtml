@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Web.NetDataDito</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Web.NetDataDito.styles.css" asp-append-version="true" />
+    <style>
+        .error-message {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="page-head">
+            <img id="logo" src="img/Logo.png" alt="Logo">
+        </div>
+        <div class="page-body">
+            <form id="login-form">
+                <input type="text" id="phone" name="phone" placeholder="Phone Number"
+                       pattern="^5[0-9]{9}$" minlength="9" maxlength="11" required>
+                <span class="error-box">Your phone number must be in the format 5xx-xxx-xxxx and 10 digits.</span>
+                <input type="password" id="password" name="password" placeholder="Password"
+                       minlength="4" maxlength="32" required>
+                <span class="error-box" id="password-error">Your password should include 4 to 32 characters.</span>
+                <br>
+                <input type="checkbox" value="Remember Me" id="rememberMe">
+                <label for="rememberMe">Remember me</label>
+                <br>
+                <button type="button" id="loginButton">Login</button>
+                <p class="error-message" id="loginError">Invalid phone number or password. Please try again.</p>
+            </form>
+        </div>
+        <div class="page-footer">
+            <div class="label-container">
+                <a asp-controller="Account" asp-action="ForgotPassword">ForgotPassword?</a>
+            </div>
+            <div class="label-container">
+                <a asp-controller="Account" asp-action="Register">Register</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script>
+        document.getElementById('loginButton').addEventListener('click', function () {
+            // Hardcoded user information
+            const validPhone = "555-555-555";
+            const validPassword = "0000";
+
+            // Get user 
+            const phone = document.getElementById('phone').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            // Validate credentials
+            if (phone === validPhone && password === validPassword) {
+                // Redirect to dashboard
+                window.location.href = "/Dashboard/Index";
+            } else {
+                // Show error message
+                document.getElementById('loginError').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
