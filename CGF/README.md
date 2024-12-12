@@ -34,6 +34,17 @@ CGF essentially listens to Kafka and sends the information to Oracle for storage
 - MainTest.java (not coded as of now)
   - Tests Main CGF function
 
+## Config
+
+You can configure the Kafka URL and Oracle credentials in the `application.properties` file within the resources folder:
+
+```
+kafka.url=localhost:9092
+oracle.url=jdbc:oracle:thin:@localhost:1521:ORACLE_SID
+oracle.username=ENTER_ORACLE_USERNAME_HERE
+oracle.password=ENTER_ORACLE_PASSWORD_HERE
+```
+
 ## Expected Output
 
 Integration and testing with Oracle DB is currently lacking.
