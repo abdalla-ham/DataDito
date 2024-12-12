@@ -7,6 +7,7 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 
+import com.i2i.datadito.kafka.seralizer.UsageRecordMessageSer;
 import com.i2i.datadito.kafka.message.Message;
 import com.i2i.datadito.kafka.seralizer.BalanceMessageSer;
 import com.i2i.datadito.kafka.seralizer.NotificationMessageSer;
