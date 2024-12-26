@@ -15,7 +15,7 @@ Maybe this can help you understand some stuff regarding running the voltDB codes
    ------> create the driver then create a connection to it.
    
 7. after that you can run the codes that I uploaded
-I added a this to the VM options :
+I added a this to the VM options(PLEASE don't skip this step) :
 --add-opens=java.base/java.lang.invoke=ALL-UNNAMED
 --add-opens=java.base/java.lang=ALL-UNNAMED
 --add-opens=java.base/java.util=ALL-UNNAMED
