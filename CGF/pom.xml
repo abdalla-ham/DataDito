@@ -16,6 +16,13 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.i2i.datadito</groupId>
+            <artifactId>kafka</artifactId>
+            <scope>system</scope>
+            <version>1.0</version>
+            <systemPath>${project.basedir}/lib/Kafka.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.36</version>
