@@ -4,7 +4,7 @@ Maybe this can help you understand some stuff regarding running the voltDB codes
 1. check that docker is working 
 2. then pull voltdb/voltdb-community (I used the terminal in intellij) --> docker pull voltdb/voltdb-community
 3. to run voltDB --> docker run -it --rm -p 21212:21212 -p 8080:8080 -p 55004:55004 -v voltdb_data:/var/voltdb -e HOST_COUNT=1 voltdb/voltdb-community voltdb start -c 1 --ignore=thp
-5. to connect voltDB to the DBeaver:
+4. to connect voltDB to the DBeaver:
    Create new driver :
    upload the jar file, I used (voltdbclient-14.0.1.jar)
                       I named it: VoltDB ,
@@ -14,7 +14,7 @@ Maybe this can help you understand some stuff regarding running the voltDB codes
                       no authentication , Allow Empty Password , Thread safe driver
    ------> create the driver then create a connection to it.
    
-7. after that you can run the codes that I uploaded
+5. after that you can run the codes that I uploaded
 I added a this to the VM options(PLEASE don't skip this step) :
 --add-opens=java.base/java.lang.invoke=ALL-UNNAMED
 --add-opens=java.base/java.lang=ALL-UNNAMED
