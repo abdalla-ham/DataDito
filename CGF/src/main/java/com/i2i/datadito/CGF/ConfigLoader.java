@@ -22,11 +22,14 @@ public class ConfigLoader {
         String envKey = key.toUpperCase().replace('.', '_');
         // Use env variables if provided
         String envValue = System.getenv(envKey);
+        System.out.println("CGF - Reading env variable " + envKey + ": " + envValue);
         if (envValue != null) {
             return envValue;
         }
         // Fallback to properties file if env variables not found
-        return properties.getProperty(key);
+        String fallback = properties.getProperty(key);
+        System.out.println("CGF - Using fallback property: " + fallback);
+        return fallback;
     }
 
     /**
