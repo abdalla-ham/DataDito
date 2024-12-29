@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const packageSelect = document.getElementById("package");
 
-    fetch("/api")
+    fetch("/http://34.56.3.235:8080/v1/api/packages/getAllPackages")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to fetch package options.");
@@ -36,20 +36,20 @@ document.addEventListener("DOMContentLoaded", function () {
         // Collect form data
         const name = document.getElementById("name").value.trim();
         const surname = document.getElementById("surname").value.trim();
-        const nid = document.getElementById("nid").value.trim();
-        let phone = document.getElementById("phone").value.trim();
+        const tcNumber = document.getElementById("tcNumber").value.trim();
+        let msisdn = document.getElementById("msisdn").value.trim();
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value.trim();
         const packageName = packageSelect.value;
 
-        if (!phone.startsWith("90")) {
-            phone = "90" + phone;
+        if (!msisdn.startsWith("90")) {
+            msisdn = "90" + msisdn;
         }
 
-        console.log(name, surname, nid, phone, email, packageName);
+        console.log(name, surname, tcNumber, msisdn, email, packageName);
 
         // Send registration request
-        fetch("/api", {
+        fetch("/http://34.56.3.235:8080/v1/api/auth/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -58,10 +58,10 @@ document.addEventListener("DOMContentLoaded", function () {
             body: JSON.stringify({
                 name: name,
                 surname: surname,
-                phone: phone,
+                msisdn: msisdn,
                 email: email,
                 password: password,
-                nid: nid,
+                tcNumber: tcNumber,
                 package: packageName,
             }),
         })

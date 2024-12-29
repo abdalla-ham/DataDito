@@ -1,18 +1,18 @@
 document.getElementById("forgot-password-form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    const nid = document.getElementById("nid").value;
+    const tcNumber = document.getElementById("tcNumber").value;
     const email = document.getElementById("email").value;
 
     try {
-        const response = await fetch("/api", {
+        const response = await fetch("/http://34.56.3.235:8080/v1/api/forgetPassword/reset", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
             },
             body : JSON.stringify({
-                nid : nid,
+                tcNumber : tcNumber,
                 email : email,
             })
         })
