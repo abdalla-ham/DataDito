@@ -3,16 +3,80 @@
   "WorkspaceRootPath": "D:\\DataDito\\Web.NetDataDito\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\DashboardController .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web.NetDataDito\\Controllers\\DashboardController .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\_Layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web.NetDataDito\\Views\\Shared\\_Layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\_Layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web.NetDataDito\\Views\\Shared\\_Layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\wwwroot\\css\\_Layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web.NetDataDito\\wwwroot\\css\\_Layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\views\\shared\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\views\\shared\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\controllers\\dashboardcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\controllers\\dashboardcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\views\\shared\\successconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\views\\shared\\successconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\views\\shared\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\views\\shared\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\views\\shared\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\views\\shared\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,41 +91,233 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DashboardController .cs",
-              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\DashboardController .cs",
-              "RelativeDocumentMoniker": "Web.NetDataDito\\Controllers\\DashboardController .cs",
-              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\DashboardController .cs",
-              "RelativeToolTip": "Web.NetDataDito\\Controllers\\DashboardController .cs",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\appsettings.json",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\appsettings.json",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\appsettings.json",
+              "RelativeToolTip": "Web.NetDataDito\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T13:56:35.253Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml.css",
-              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\_Layout.cshtml.css",
-              "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\Shared\\_Layout.cshtml.css",
-              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\_Layout.cshtml.css",
-              "RelativeToolTip": "Web.NetDataDito\\Views\\Shared\\_Layout.cshtml.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-29T13:56:29.445Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-29T15:45:29.74Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\appsettings.Development.json",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\appsettings.Development.json",
+              "RelativeToolTip": "Web.NetDataDito\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-29T15:45:26.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Models\\RegisterViewModel.cs",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\RegisterViewModel.cs",
+              "RelativeToolTip": "Web.NetDataDito\\Models\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T14:29:18.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ForgotPasswordViewModel.cs",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\ForgotPasswordViewModel.cs",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Models\\ForgotPasswordViewModel.cs",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\ForgotPasswordViewModel.cs",
+              "RelativeToolTip": "Web.NetDataDito\\Models\\ForgotPasswordViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T14:28:56.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Web.NetDataDito\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-29T13:49:36.623Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DashboardViewModel.cs",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\DashboardViewModel.cs",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Models\\DashboardViewModel.cs",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\DashboardViewModel.cs",
+              "RelativeToolTip": "Web.NetDataDito\\Models\\DashboardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T14:27:33.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Web.NetDataDito\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T14:31:10.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Register.cshtml",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\Shared\\Register.cshtml",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Register.cshtml",
+              "RelativeToolTip": "Web.NetDataDito\\Views\\Shared\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-29T14:17:34.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml.css",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\wwwroot\\css\\_Layout.cshtml.css",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\wwwroot\\css\\_Layout.cshtml.css",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\wwwroot\\css\\_Layout.cshtml.css",
+              "RelativeToolTip": "Web.NetDataDito\\wwwroot\\css\\_Layout.cshtml.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-29T13:56:29.445Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Models\\User.cs",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\User.cs",
+              "RelativeToolTip": "Web.NetDataDito\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T14:29:37.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Web.NetDataDito\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAqwF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T14:30:31.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Web.NetDataDito\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-29T14:33:44.785Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Web.NetDataDito\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-29T14:34:04.182Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DashboardController .cs",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\DashboardController .cs",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Controllers\\DashboardController .cs",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\DashboardController .cs",
+              "RelativeToolTip": "Web.NetDataDito\\Controllers\\DashboardController .cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T13:56:35.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Web.NetDataDito\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T14:28:40.412Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SuccessConfirmation.cshtml",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\SuccessConfirmation.cshtml",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\Shared\\SuccessConfirmation.cshtml",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\SuccessConfirmation.cshtml",
+              "RelativeToolTip": "Web.NetDataDito\\Views\\Shared\\SuccessConfirmation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-29T14:18:43.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\Shared\\Index.cshtml",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Index.cshtml",
+              "RelativeToolTip": "Web.NetDataDito\\Views\\Shared\\Index.cshtml",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAwwFoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-29T14:16:43.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\Shared\\ForgotPassword.cshtml",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\ForgotPassword.cshtml",
+              "RelativeToolTip": "Web.NetDataDito\\Views\\Shared\\ForgotPassword.cshtml",
+              "ViewState": "AgIAACMAAAAAAAAAAAAUwE8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-29T14:07:54.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Web.NetDataDito\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-29T14:14:50.988Z"
             }
           ]
         }

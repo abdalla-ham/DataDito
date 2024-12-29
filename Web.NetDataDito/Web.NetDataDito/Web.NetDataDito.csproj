@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\img\Deprecated-2.png" />
     <None Include="wwwroot\img\Deprecated.png" />
     <None Include="wwwroot\img\Logo.png" />

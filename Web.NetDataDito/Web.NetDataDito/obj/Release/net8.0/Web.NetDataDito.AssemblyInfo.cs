@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Web.NetDataDito")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12c736d8824076757fe8fee78358febe3e00db55")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d998690d879f123a696230fad8956c3e1826d01")]
 [assembly: System.Reflection.AssemblyProductAttribute("Web.NetDataDito")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Web.NetDataDito")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,12 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\Web.NetDataDito",
-    "\\Web.NetDataDito\\Controllers",
-    "\\Web.NetDataDito\\Models",
     "\\Web.NetDataDito\\Views",
     "\\Web.NetDataDito\\Views\\Home",
-    "\\Web.NetDataDito\\Views\\Shared"
+    "\\Web.NetDataDito\\Views\\Shared",
+    "\\Web.NetDataDito\\wwwroot",
+    "\\Web.NetDataDito\\wwwroot\\css",
+    "\\Web.NetDataDito\\wwwroot\\img",
+    "\\Web.NetDataDito\\wwwroot\\js",
+    "\\Web.NetDataDito\\wwwroot\\lib"
   ],
-  "SelectedNode": "\\Web.NetDataDito",
   "PreviewInSolutionExplorer": false
 }
