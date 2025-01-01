@@ -68,7 +68,7 @@ body {
     background-color: #e0e0e0;
 }
 
-#phone, #password {
+#msisdn, #password {
     width: 100%;
     height: 35px;
     border-radius: 5px;
