@@ -4,11 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Content Include="Views\Shared\_Layout.cshtml.css" />
-  </ItemGroup>
+  </PropertyGroup> 
 
   <ItemGroup>
     <None Include="wwwroot\img\Deprecated-2.png" />

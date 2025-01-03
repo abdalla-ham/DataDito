@@ -1,0 +1,166 @@
+﻿@model Web.NetDataDito.ApiModels.LoginRequest
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - DataDito</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+        }
+
+            .logo-container img {
+                width: 200px;
+                height: auto;
+            }
+
+        .form-control {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .remember-me {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .login-button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+            .login-button:hover {
+                background-color: #cc0000;
+            }
+
+        .links-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .link-button {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 5px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+
+            .link-button:hover {
+                background-color: #f5f5f5;
+            }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo-container">
+            <img src="~/img/Logo.png" alt="DataDito Logo">
+        </div>
+
+        <form id="login-form" asp-controller="Account" asp-action="Login" method="post">
+            @Html.AntiForgeryToken()
+
+            <input type="text"
+                   asp-for="Msisdn"
+                   class="form-control"
+                   placeholder="Phone Number"
+                   required>
+
+            <input type="password"
+                   asp-for="Password"
+                   class="form-control"
+                   placeholder="Password"
+                   required>
+
+            <div class="remember-me">
+                <input type="checkbox" id="rememberMe">
+                <label for="rememberMe">Remember me</label>
+            </div>
+
+            <button type="submit" class="login-button">Login</button>
+
+            <div class="error-message" id="loginError">
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                }
+            </div>
+        </form>
+
+        <div class="links-container">
+            <a href="@Url.Action("ForgotPassword", "Account")" class="link-button">Forgot Password</a>
+            <a href="@Url.Action("Register", "Account")" class="link-button">Register</a>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#login-form').on('submit', function (e) {
+                e.preventDefault();
+
+                const loginData = {
+                    msisdn: $('#Msisdn').val(),
+                    password: $('#Password').val()
+                };
+
+                $.ajax({
+                    url: '/Account/Login',
+                    type: 'POST',
+                    data: JSON.stringify(loginData),
+                    contentType: 'application/json',
+                    success: function (response) {
+                        if (response.success) {
+                            window.location.href = '/Dashboard/Index';
+                        } else {
+                            $('#loginError').text(response.message).show();
+                        }
+                    },
+                    error: function () {
+                        $('#loginError').text('An error occurred during login').show();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

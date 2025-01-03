@@ -1,52 +1,44 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Web.NetDataDito.ApiModels;
 using Web.NetDataDito.Models;
-using System.Net.Http;
-using System.Text.Json;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Web.NetDataDito.Controllers
+public class DashboardController : Controller
 {
-    public class DashboardController : Controller
+    private readonly HttpClient _httpClient;
+    private const string BaseApiUrl = "http://34.56.3.235:8080/v1/api";
+
+    public DashboardController(IHttpClientFactory httpClientFactory)
     {
-        private readonly HttpClient _httpClient;
+        _httpClient = httpClientFactory.CreateClient();
+    }
 
-        public DashboardController(IHttpClientFactory httpClientFactory)
+    public async Task<IActionResult> Index()
+    {
+        try
         {
-            _httpClient = httpClientFactory.CreateClient();
+            // Get user's MSISDN from session/claims
+            var msisdn = User.Identity.Name; // Adjust based on your authentication setup
+
+            // Get user package
+            var packageResponse = await _httpClient.GetAsync($"{BaseApiUrl}/packages/getUserPackageByMsisdn?msisdn={msisdn}");
+            var packageDetails = await packageResponse.Content.ReadFromJsonAsync<PackageDetails>();
+
+            // Get remaining balance
+            var balanceResponse = await _httpClient.GetAsync($"{BaseApiUrl}/balance/remainingBalance?accountId={msisdn}");
+            var balanceDetails = await balanceResponse.Content.ReadFromJsonAsync<RemainingBalance>();
+
+            var viewModel = new DashboardViewModel
+            {
+                // Map API response to view model
+                // Add properties as needed
+            };
+
+            return View(viewModel);
         }
-
-        [HttpGet]
-        public async Task<IActionResult> Index()
+        catch (Exception ex)
         {
-            // Replace this with your actual API endpoint
-            var apiEndpoint = "https://randomapi.com/api/dashboard";
-
-            try
-            {
-                // Call the API to fetch dashboard information
-                var response = await _httpClient.GetAsync(apiEndpoint);
-                if (response.IsSuccessStatusCode)
-                {
-                    // Deserialize API response into DashboardViewModel
-                    var apiResponse = await response.Content.ReadAsStringAsync();
-                    var dashboardData = JsonSerializer.Deserialize<DashboardViewModel>(apiResponse);
-
-                    // Pass the data to the view
-                    return View(dashboardData);
-                }
-                else
-                {
-                    // Handle API error (log it, show a fallback view, etc.)
-                    ModelState.AddModelError(string.Empty, "Unable to fetch dashboard information. Please try again later.");
-                    return View(new DashboardViewModel());
-                }
-            }
-            catch (Exception ex)
-            {
-                // Handle any unexpected errors (network issues, etc.)
-                ModelState.AddModelError(string.Empty, $"An error occurred: {ex.Message}");
-                return View(new DashboardViewModel());
-            }
+            return View("Error");
         }
     }
 }
