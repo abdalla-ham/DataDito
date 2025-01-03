@@ -1,22 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const savedPhone = localStorage.getItem("savedPhone");
+
+    const savedMsisdn = localStorage.getItem("savedMsisdn");
     const savedPassword = localStorage.getItem("savedPassword");
 
-    if (savedPhone && savedPassword) {
-        autoLogin(savedPhone, savedPassword);
+    if (savedMsisdn && savedPassword) {
+        autoLogin(savedMsisdn, savedPassword);
     }
 });
 
-async function autoLogin(phone, password) {
+async function autoLogin(msisdn, password) {
     try {
-        const response = await fetch("/api", {
+        const response = await fetch("http://34.56.3.235:8080/v1/api/auth/login", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json',
             },
+            credentials: 'include',
             body: JSON.stringify({
-                phone: phone,
+                msisdn: msisdn,
                 password: password,
             }),
         });
@@ -25,7 +26,7 @@ async function autoLogin(phone, password) {
             window.location.replace("http://localhost:8080/UserInformationPage/index.html");
         } else {
             alert("Invalid saved credentials. Please log in manually.");
-            localStorage.removeItem("savedPhone");
+            localStorage.removeItem("savedMsisdn");
             localStorage.removeItem("savedPassword");
         }
     } catch (error) {
@@ -37,33 +38,33 @@ async function autoLogin(phone, password) {
 document.getElementById("login-form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    let phone = document.getElementById('phone').value;
-    phone = '90' + phone;
+    let msisdn = document.getElementById('msisdn').value;
+    msisdn = '90' + msisdn;
     const password = document.getElementById('password').value;
     const rememberMe = document.getElementById('rememberMe').checked;
 
-    console.log("Phone:", phone);
+    console.log("Msisdn:", msisdn);
     console.log("Password:", password);
 
     try {
-        const response = await fetch("/api", {
+        const response = await fetch("http://34.56.3.235:8080/v1/api/auth/login", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json',
             },
+            credentials: "include",
             body: JSON.stringify({
-                phone: phone,
+                msisdn: msisdn,
                 password: password,
             }),
         });
 
         if (response.ok) {
             if (rememberMe) {
-                localStorage.setItem("savedPhone", phone);
+                localStorage.setItem("savedMsisdn", msisdn);
                 localStorage.setItem("savedPassword", password);
             } else {
-                localStorage.removeItem("savedPhone");
+                localStorage.removeItem("savedMsisdn");
                 localStorage.removeItem("savedPassword");
             }
 
