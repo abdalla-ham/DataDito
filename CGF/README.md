@@ -171,3 +171,6 @@ Subscribed topics: [UsageRecordTopic]
 ... // infinite loop continues execution
 
 ```
+
+## Concerns, Notes
+- The Kafka.jar file currently uses a hardcoded value of localhost:9092 which may cause issues if another address is desired. While CGF is unable to tweak this, it is capable of working with environment variables to tweak the broker address or Oracle credentials as needed. Assuming Kafka.jar is updated to allow dynamic address, or Kafka files are copied to be tweaked directly within the project, the hardcoded value can be tweaked as needed.
