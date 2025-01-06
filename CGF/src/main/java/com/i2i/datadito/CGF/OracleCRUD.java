@@ -55,8 +55,10 @@ public class OracleCRUD {
         finally {
             // Clean up resources
             try {
+                // Close statement
                 if (statement != null) statement.close();
             } catch (SQLException e) {
+                // Log potential issues while closing SQL statement
                 logger.error("SQL Exception while closing SQL statement... ", e);
             }
         }
