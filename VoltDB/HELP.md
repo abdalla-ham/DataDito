@@ -13,8 +13,9 @@ Maybe this can help you understand some stuff regarding running the voltDB codes
                       default port : 21212   ,
                       no authentication , Allow Empty Password , Thread safe driver
    ------> create the driver then create a connection to it.
+   don't forget to execute the codes to create the needed tables and procedures  
    
-5. after that you can run the codes that I uploaded
+6. after that you can run the codes that I uploaded
 I added a this to the VM options(PLEASE don't skip this step) :
 --add-opens=java.base/java.lang.invoke=ALL-UNNAMED
 --add-opens=java.base/java.lang=ALL-UNNAMED
