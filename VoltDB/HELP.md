@@ -27,8 +27,9 @@ I added a this to the VM options(PLEASE don't skip this step) :
 
 Start with Running InsertingTest file, then run the VoltDbOperatorsTest file
 
-/////////////////////////
-Creat new VM instance ( Ubunto , E2, 20 GB , Allow everything in the Firewall section).
+///////////////////////// 
+VoltDB in cloud(not needed for testers or any other guy except for the VoltDB guy):
+Create new VM instance ( Ubunto , E2, 20 GB , Allow everything in the Firewall section).
 You also need.. 
 To create a firewall rule for VoltDB's default port (21212), follow these steps:
 
