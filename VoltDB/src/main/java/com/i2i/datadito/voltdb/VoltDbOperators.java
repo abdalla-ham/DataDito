@@ -15,8 +15,10 @@ public class VoltDbOperators {
   private static final Logger logger = LogManager.getLogger(VoltDbOperators.class);
 
     public VoltDbOperators() {
-       // this.ip = "34.42.35.90";
-        this.ip = "localhost";
+        //this.ip = "34.42.35.90";
+      //  this.ip = "34.154.174.193";   //italy
+       // this.ip = "localhost";
+        this.ip = "4.178.178.188";
         this.port = 21212;
         initializeClient();
 
@@ -184,8 +186,6 @@ public class VoltDbOperators {
             throw new RuntimeException("Update password operation was interrupted for email: " + email, e);
         }
     }
-
-
     public UserDetails getUserDetails(String msisdn) {
         try {
             ClientResponse response = client.callProcedure("GET_CUSTOMER_INFO_PACKAGE_BY_MSISDN", msisdn);
@@ -218,7 +218,6 @@ public class VoltDbOperators {
         return getUserDetails(msisdn).getPackageId();
     }
     private void handleProcedureInsertCustomer(String procedureName,int cust_id, String name, String surname, String msisdn, String email, String password, Timestamp sdate, String tc_no){
-
         try {
             ClientResponse response = client.callProcedure(procedureName, cust_id, msisdn, name , surname, email, password, sdate, tc_no);
             if (response.getStatus() != ClientResponse.SUCCESS){
@@ -321,7 +320,6 @@ public class VoltDbOperators {
         logger.error("Customer not found with this MSISDN: " + msisdn);
         throw new RuntimeException("Customer not found with this MSISDN: " + msisdn);
     }
-
     public VoltCustomerBalance getRemainingCustomerBalanceByMsisdn(String msisdn) throws IOException, ProcCallException, InterruptedException {
         Client client1 = getClient();
         ClientResponse response = client1.callProcedure("GET_REMAINING_CUSTOMER_BALANCE_BY_MSISDN", msisdn);
@@ -344,7 +342,6 @@ public class VoltDbOperators {
                         sdate,
                         edate
                 );
-
                 client1.close();
                 return balanceResponse;
             }
@@ -353,8 +350,6 @@ public class VoltDbOperators {
         logger.error("Customer balance not found for msisdn: " + msisdn);
         throw new RuntimeException("Customer balance not found for msisdn: " + msisdn);
     }
-
-
     public VoltPackageDetails getPackageInfoByPackageId(int packageId) throws IOException, ProcCallException, InterruptedException {
         Client client1 = getClient();
         ClientResponse response = client.callProcedure("GET_PACKAGE_INFO_BY_PACKAGE_ID", packageId);
@@ -383,5 +378,4 @@ public class VoltDbOperators {
             }
         }
     }
-
 }
