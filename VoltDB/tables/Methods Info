@@ -15,6 +15,7 @@
 - getRemainingCustomerBalanceByMsisdn(String msisdn);
 - getPackageInfoByPackageId(int packageId);
 - getPackageByMsisdn(String msisdn);
+- getPackageIdByName(String package_name);
 
 -- CHF --
 
