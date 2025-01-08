@@ -18,7 +18,7 @@ public class VoltDbOperators {
         //this.ip = "34.42.35.90";
       //  this.ip = "34.154.174.193";   //italy
        // this.ip = "localhost";
-        this.ip = "4.178.178.188";
+        this.ip = "4.178.178.188";  // France
         this.port = 21212;
         initializeClient();
 
