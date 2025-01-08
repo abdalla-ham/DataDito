@@ -11,7 +11,7 @@
 - getCustomerIdByEmailAndTC(String email, String tc_no);
 - getMaxCustomerId();
 - getMaxBalanceId();
-- getCustomerInfoByMsisdn(String msisdn);
+- getCustomerByMsisdn(msisdn);
 - getRemainingCustomerBalanceByMsisdn(String msisdn);
 - getPackageInfoByPackageId(int packageId);
 - getPackageByMsisdn(String msisdn);
