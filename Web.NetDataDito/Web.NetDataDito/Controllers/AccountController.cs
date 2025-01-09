@@ -116,16 +116,27 @@ namespace Web.NetDataDito.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
+                    if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                    {
+                        return Json(new { success = true });
+                    }
                     TempData["SuccessMessage"] = "Registration successful!";
                     return RedirectToAction(nameof(Login));
                 }
 
-                _logger.LogWarning($"Registration failed: {responseContent}");
+                if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                {
+                    return Json(new { success = false, message = responseContent });
+                }
                 ModelState.AddModelError("", $"Registration failed: {responseContent}");
             }
             catch (Exception ex)
             {
                 _logger.LogError($"Registration Error: {ex.Message}");
+                if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                {
+                    return Json(new { success = false, message = "An error occurred during registration" });
+                }
                 ModelState.AddModelError("", "An error occurred during registration");
             }
 

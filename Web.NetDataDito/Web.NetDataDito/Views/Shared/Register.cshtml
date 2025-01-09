@@ -1,8 +1,7 @@
-﻿@model Web.NetDataDito.ApiModels.RegisterRequest
+﻿@model Web.NetDataDito.Models.RegisterViewModel
 
 @{
 	Layout = null;
-	<!-- Disable the main layout -->
 }
 
 <!DOCTYPE html>
@@ -45,56 +44,284 @@
 			font-size: 16px;
 			margin-bottom: 15px;
 		}
+
+			.registerBtn:hover {
+				background-color: #cc0000;
+			}
+
+		.validation-message {
+			font-size: 12px;
+			color: #dc3545;
+			margin-top: 5px;
+			display: none;
+		}
+
+		.input-invalid {
+			border-color: #dc3545;
+		}
+
+		.input-valid {
+			border-color: #198754;
+		}
+
+		.password-requirements {
+			font-size: 12px;
+			color: #6c757d;
+			margin-top: 5px;
+		}
+
+		.logo-container {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+			.logo-container img {
+				width: 150px;
+				height: auto;
+			}
+
+		.modal-content {
+			border-radius: 10px;
+		}
+
+		.modal-header {
+			background-color: #28a745;
+			color: white;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+		}
+
+		.modal-body {
+			padding: 20px;
+			text-align: center;
+		}
+
+		.btn-close {
+			filter: brightness(0) invert(1);
+		}
+
+		#countdown {
+			font-weight: bold;
+			color: #28a745;
+		}
+
 	</style>
 </head>
 <body>
 	<div class="form-container">
-		<h3>Register</h3>
-		<form asp-action="Register" asp-controller="Account" method="post">
+		<div class="logo-container">
+			<img src="~/img/Logo.png" alt="DataDito Logo" />
+		</div>
+		<h3 class="text-center mb-4">Register</h3>
+		<form asp-action="Register" asp-controller="Account" method="post" id="registerForm">
+			@Html.AntiForgeryToken()
+
 			<div class="form-group">
-				<input asp-for="Name" placeholder="Name" class="form-control" />
+				<input asp-for="Name" class="form-control" placeholder="Name"
+					   required minlength="2" maxlength="50"
+					   pattern="^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$" />
 				<span asp-validation-for="Name" class="text-danger"></span>
+				<div class="validation-message" id="nameValidation">Name must be 2-50 characters, letters only</div>
 			</div>
 
 			<div class="form-group">
-				<input asp-for="Surname" placeholder="Surname" class="form-control" />
+				<input asp-for="Surname" class="form-control" placeholder="Surname"
+					   required minlength="2" maxlength="50"
+					   pattern="^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$" />
 				<span asp-validation-for="Surname" class="text-danger"></span>
+				<div class="validation-message" id="surnameValidation">Surname must be 2-50 characters, letters only</div>
 			</div>
 
 			<div class="form-group">
-				<input asp-for="Msisdn" placeholder="Phone Number" class="form-control" />
+				<input asp-for="Msisdn" class="form-control" placeholder="Phone Number (5xxxxxxxxx)"
+					   required pattern="^5[0-9]{9}$" />
 				<span asp-validation-for="Msisdn" class="text-danger"></span>
+				<div class="validation-message" id="msisdnValidation">Phone number must start with 5 and be 10 digits</div>
 			</div>
 
 			<div class="form-group">
-				<input asp-for="Email" placeholder="Email" class="form-control" />
+				<input asp-for="Email" class="form-control" placeholder="Email"
+					   required type="email" maxlength="100" />
 				<span asp-validation-for="Email" class="text-danger"></span>
+				<div class="validation-message" id="emailValidation">Please enter a valid email address</div>
 			</div>
 
 			<div class="form-group">
-				<input asp-for="TcNumber" placeholder="TC Number" class="form-control" />
+				<input asp-for="TcNumber" class="form-control" placeholder="TC Number"
+					   required pattern="^[0-9]{11}$" />
 				<span asp-validation-for="TcNumber" class="text-danger"></span>
+				<div class="validation-message" id="tcNumberValidation">TC Number must be 11 digits</div>
 			</div>
 
 			<div class="form-group">
-				<input asp-for="PackageName" placeholder="Package Name" class="form-control" />
+				<input asp-for="PackageName" class="form-control" placeholder="Package Name"
+					   required maxlength="50" />
 				<span asp-validation-for="PackageName" class="text-danger"></span>
+				<div class="validation-message" id="packageNameValidation">Package name is required</div>
 			</div>
 
 			<div class="form-group">
-				<input asp-for="Password" type="password" placeholder="Password" class="form-control" />
+				<input asp-for="Password" type="password" class="form-control" placeholder="Password"
+					   required minlength="6" maxlength="32" />
 				<span asp-validation-for="Password" class="text-danger"></span>
+				<div class="password-requirements">
+					Password must contain:
+					<ul class="mb-0">
+						<li>At least 6 characters</li>
+						<li>One uppercase letter</li>
+						<li>One lowercase letter</li>
+						<li>One number</li>
+						<li>One special character</li>
+					</ul>
+				</div>
 			</div>
 
-			<button type="submit" class="registerBtn">Register</button>
+			<button type="submit" class="registerBtn" id="submitButton">Register</button>
 
 			<div class="mt-3 text-center">
-				<a asp-action="Login">Already have an account? Login</a>
+				<a asp-action="Login" class="text-decoration-none">Already have an account? Login</a>
 			</div>
 		</form>
+
+		<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Registration Successful!</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<p>Your registration has been completed successfully.</p>
+						<p>You will be redirected to the login page in <span id="countdown">5</span> seconds.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
+
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			// Real-time validation
+			function validateInput(input, validationId, pattern, message) {
+				const isValid = pattern ? pattern.test(input.val()) : input[0].checkValidity();
+				const validationElement = $(`#${validationId}`);
+
+				if (!isValid && input.val()) {
+					input.addClass('input-invalid').removeClass('input-valid');
+					validationElement.show();
+				} else if (input.val()) {
+					input.addClass('input-valid').removeClass('input-invalid');
+					validationElement.hide();
+				} else {
+					input.removeClass('input-valid input-invalid');
+					validationElement.hide();
+				}
+			}
+
+			// Name validation
+			$('#Name').on('input', function () {
+				validateInput($(this), 'nameValidation', /^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]{2,50}$/);
+			});
+
+			// Surname validation
+			$('#Surname').on('input', function () {
+				validateInput($(this), 'surnameValidation', /^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]{2,50}$/);
+			});
+
+			// Phone number validation
+			$('#Msisdn').on('input', function () {
+				validateInput($(this), 'msisdnValidation', /^5[0-9]{9}$/);
+			});
+
+			// Email validation
+			$('#Email').on('input', function () {
+				validateInput($(this), 'emailValidation');
+			});
+
+			// TC Number validation
+			$('#TcNumber').on('input', function () {
+				validateInput($(this), 'tcNumberValidation', /^[0-9]{11}$/);
+			});
+
+			// Password validation
+			$('#Password').on('input', function () {
+				const password = $(this).val();
+				const hasUpperCase = /[A-Z]/.test(password);
+				const hasLowerCase = /[a-z]/.test(password);
+				const hasNumbers = /\d/.test(password);
+				const hasSpecialChar = /[!#$%^&*(),.?":{}|<>]/.test(password);
+				const isValidLength = password.length >= 6;
+
+				const isValid = hasUpperCase && hasLowerCase && hasNumbers && hasSpecialChar && isValidLength;
+
+				if (password) {
+					$(this).toggleClass('input-valid', isValid).toggleClass('input-invalid', !isValid);
+				} else {
+					$(this).removeClass('input-valid input-invalid');
+				}
+			});
+
+			// Form submission with AJAX
+			$('#registerForm').on('submit', function (e) {
+				e.preventDefault();
+				const form = $(this)[0];
+
+				if (form.checkValidity()) {
+					// Disable submit button to prevent double submission
+					$('#submitButton').prop('disabled', true).text('Registering...');
+
+					$.ajax({
+						url: $(this).attr('action'),
+						type: 'POST',
+						data: $(this).serialize(),
+						success: function (response) {
+							if (response.success) {
+								// Show success modal
+								$('#successModal').modal('show');
+
+								// Countdown timer
+								let seconds = 2;
+								const countdownInterval = setInterval(function() {
+									seconds--;
+									$('#countdown').text(seconds);
+
+									if (seconds <= 0) {
+										clearInterval(countdownInterval);
+										window.location.href = '/Account/Login';
+									}
+								}, 1000);
+							} else {
+								alert(response.message || 'Registration failed. Please try again.');
+								$('#submitButton').prop('disabled', false).text('Register');
+							}
+						},
+						error: function (xhr, status, error) {
+							alert('An error occurred during registration. Please try again.');
+							$('#submitButton').prop('disabled', false).text('Register');
+						}
+					});
+				}
+
+				$(this).addClass('was-validated');
+			});
+
+			// Handle modal close button
+			$('.btn-close').on('click', function() {
+				window.location.href = '/Account/Login';
+			});
+
+			// Handle modal backdrop click
+			$('#successModal').on('click', function(e) {
+				if (e.target === this) {
+					window.location.href = '/Account/Login';
+				}
+			});
+		});
+	</script>
 </body>
 </html>
