@@ -21,25 +21,23 @@ public class VoltDbOperatorsTest {
 
         // Invoking methods
         try {
-          System.out.println("Package Name: " + operators.getPackageName(msisdn));
+            System.out.println("Package Name: " + operators.getPackageName(msisdn));
             System.out.println("Customer Password: " + operators.getCustomerPassword(msisdn));
-           System.out.println("SMS Balance: " + operators.getSmsBalance(msisdn));
+            System.out.println("SMS Balance: " + operators.getSmsBalance(msisdn));
             System.out.println("Data Balance: " + operators.getDataBalance(msisdn));
             System.out.println("Voice Balance: " + operators.getVoiceBalance(msisdn));
-           System.out.println("Customer ID: " + operators.getCustomerIdByEmailAndTC(email, tcNo));
+            System.out.println("Customer ID: " + operators.getCustomerIdByEmailAndTC(email, tcNo));
             System.out.println("Max Customer ID: " + operators.getMaxCustomerId());
             System.out.println("Max Balance ID: " + operators.getMaxBalanceId());
             System.out.println("Package SMS Balance: " + operators.getPackageSmsBalance(msisdn));
-           System.out.println("Package Data Balance: " + operators.getPackageDataBalance(msisdn));
+            System.out.println("Package Data Balance: " + operators.getPackageDataBalance(msisdn));
             System.out.println("Package Voice Balance: " + operators.getPackageVoiceBalance(msisdn));
 
             operators.updateSmsBalance(usage, msisdn);
             operators.updateDataBalance(usage, msisdn);
             operators.updateVoiceBalance(usage, msisdn);
 
-           // operators.insertCustomer(customerId, "John", "Doe", msisdn, email, "password123", now, tcNo);
-            //operators.insertBalance(balanceId, packageId, customerId, 444, 44, 43, 223, now, now , 333, 33);
-          // operators.insertPackage("INSERT_PACKAGE", packageId, "Test Package", 9.99, 500, 1024, 1000, 30);
+
 
 
             Optional<VoltCustomer> customer = operators.getCustomerByMsisdn(msisdn);

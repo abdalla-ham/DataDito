@@ -85,14 +85,14 @@ public class VoltDbOperators {
     public void updateVoiceBalance(int voiceUsage, String msisdn){
         handleProcedure("UPDATE_CUSTOMER_MINUTES_BALANCE_BY_MSISDN", voiceUsage, msisdn);
     }
-    public void insertCustomer(int cust_id, String name, String surname, String msisdn, String email, String password, Timestamp sdate, String tc_no) {
-        handleProcedureInsertCustomer( "INSERT_NEW_CUSTOMER", cust_id, name, surname, msisdn, email, password, sdate, tc_no);
+    public void insertCustomer(int cust_id, String msisdn, String name, String surname,  String email, String password, Timestamp sdate, String tc_no) {
+        handleProcedureInsertCustomer( "INSERT_NEW_CUSTOMER", cust_id, msisdn, name, surname, email, password, sdate, tc_no);
     }
     public void insertBalance(int balance_id, int cust_id, int package_id, int bal_lvl_minutes, int bal_lvl_sms, int bal_lvl_data, Timestamp sdate, Timestamp edate) {
         handleProcedureInsertBalance("INSERT_BALANCE_TO_CUSTOMER", balance_id, cust_id, package_id, bal_lvl_minutes, bal_lvl_sms, bal_lvl_data, sdate, edate);
     }
     public void insertPackage(String procedureName,int package_id, String package_name , double price, int amount_minutes, int amount_data, int amount_sms, int period) {
-        handleProcedureInsertPackage("INSERT_PACKAGE", package_id, package_name, price, amount_minutes, amount_data, amount_sms, period);
+        handleProcedureInsertPackage( procedureName, package_id, package_name, price, amount_minutes, amount_data, amount_sms, period);
     }
     public int checkCustomerExists(String email, String tc_no){
         return handleProcedureCheck("CHECK_CUSTOMER_EXISTS_BY_EMAIL_AND_TCNO", email, tc_no);
@@ -208,7 +208,7 @@ public class VoltDbOperators {
     public int getPackageId(String msisdn) {
         return getUserDetails(msisdn).getPackageId();
     }
-    private void handleProcedureInsertCustomer(String procedureName,int cust_id, String name, String surname, String msisdn, String email, String password, Timestamp sdate, String tc_no){
+    private void handleProcedureInsertCustomer(String procedureName,int cust_id,  String msisdn, String name, String surname, String email, String password, Timestamp sdate, String tc_no){
         try {
             ClientResponse response = client.callProcedure(procedureName, cust_id, msisdn, name , surname, email, password, sdate, tc_no);
             if (response.getStatus() != ClientResponse.SUCCESS){
