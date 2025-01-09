@@ -42,7 +42,7 @@ public class VoltDbOperatorsTest {
           // operators.insertPackage("INSERT_PACKAGE", packageId, "Test Package", 9.99, 500, 1024, 1000, 30);
 
 
-            Optional<VoltCustomer> customer = operators.getCustomerInfoByMsisdn(msisdn);
+            Optional<VoltCustomer> customer = operators.getCustomerByMsisdn(msisdn);
             customer.ifPresent(System.out::println);
 
             System.out.println("User Name: " + operators.getName(msisdn));
@@ -63,7 +63,7 @@ public class VoltDbOperatorsTest {
             msisdn = "1234567890";
              email = "test@example.com";
              tcNo = "12345678901";
-            operators.updatePassword(email, tcNo, msisdn, "MHJALHAJ239");
+            operators.updatePassword(email, tcNo, "MHJALHAJ239");
             System.out.println("Customer Password: " + operators.getCustomerPassword(msisdn));
             System.out.println("email:"+ email+"\n tc:"+tcNo+"\n msisdn:"+msisdn);
 
