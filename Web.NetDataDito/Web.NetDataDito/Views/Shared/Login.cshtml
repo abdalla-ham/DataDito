@@ -134,7 +134,7 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
+                $(document).ready(function () {
             $('#login-form').on('submit', function (e) {
                 e.preventDefault();
 
@@ -143,6 +143,10 @@
                     password: $('#Password').val()
                 };
 
+                // Show loading state
+                $('#loginButton').prop('disabled', true).text('Logging in...');
+                $('#loginError').hide();
+
                 $.ajax({
                     url: '/Account/Login',
                     type: 'POST',
@@ -150,13 +154,18 @@
                     contentType: 'application/json',
                     success: function (response) {
                         if (response.success) {
+                            // Redirect to dashboard or handle successful login
                             window.location.href = '/Dashboard/Index';
                         } else {
                             $('#loginError').text(response.message).show();
                         }
                     },
-                    error: function () {
-                        $('#loginError').text('An error occurred during login').show();
+                    error: function (xhr, status, error) {
+                        $('#loginError').text('Cannot connect to the server. Please try again later.').show();
+                        console.error('Error:', error);
+                    },
+                    complete: function() {
+                        $('#loginButton').prop('disabled', false).text('Login');
                     }
                 });
             });

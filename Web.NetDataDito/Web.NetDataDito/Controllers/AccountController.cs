@@ -11,56 +11,83 @@ namespace Web.NetDataDito.Controllers
     public class AccountController : Controller
     {
         private readonly HttpClient _httpClient;
+        private readonly ILogger<AccountController> _logger;
         private const string BaseApiUrl = "http://34.56.3.235:8080/v1/api";
 
-        public AccountController(IHttpClientFactory httpClientFactory)
+        public AccountController(IHttpClientFactory httpClientFactory, ILogger<AccountController> logger)
         {
             _httpClient = httpClientFactory.CreateClient();
+            _logger = logger;
+            _httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        // GET: /Account/Login
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
-        // POST: /Account/Login
         [HttpPost]
         public async Task<IActionResult> Login([FromBody] LoginRequest model)
         {
             try
             {
-                var response = await _httpClient.PostAsJsonAsync($"{BaseApiUrl}/auth/login", new
+                var loginData = new
                 {
                     msisdn = model.Msisdn,
                     password = model.Password
-                });
+                };
+
+                var jsonContent = JsonSerializer.Serialize(loginData);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                var response = await _httpClient.PostAsync($"{BaseApiUrl}/auth/login", content);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                _logger.LogInformation($"Login API Response: {responseContent}");
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var result = await response.Content.ReadFromJsonAsync<LoginResponse>();
-                    // Here you might want to store the token/user info in session/cookie
-                    return Json(new { success = true });
+                    if (responseContent.Contains("Login successful"))
+                    {
+                        // Store user information in session
+                        HttpContext.Session.SetString("UserMsisdn", model.Msisdn);
+                        string email = responseContent.Split(':').LastOrDefault()?.Trim() ?? "";
+                        HttpContext.Session.SetString("UserEmail", email);
+
+                        // Store login timestamp
+                        HttpContext.Session.SetString("LoginTime", DateTime.Now.ToString());
+
+                        return Json(new { success = true, email = email });
+                    }
+                    else
+                    {
+                        _logger.LogWarning($"Login failed for user {model.Msisdn}");
+                        return Json(new { success = false, message = "Invalid credentials" });
+                    }
                 }
 
+                _logger.LogWarning($"Login failed with status code: {response.StatusCode}");
                 return Json(new { success = false, message = "Invalid credentials" });
+            }
+            catch (HttpRequestException ex)
+            {
+                _logger.LogError($"HTTP Request Error during login: {ex.Message}");
+                return Json(new { success = false, message = "Cannot connect to the server" });
             }
             catch (Exception ex)
             {
-                // Log the exception
-                return Json(new { success = false, message = "An error occurred during login "});
+                _logger.LogError($"Unexpected Error during login: {ex.Message}");
+                return Json(new { success = false, message = "An unexpected error occurred" });
             }
         }
 
-        // GET: /Account/Register
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
 
-        // POST: /Account/Register
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterRequest model)
@@ -79,7 +106,13 @@ namespace Web.NetDataDito.Controllers
                     sdate = model.Sdate ?? DateTime.Now.ToString("yyyy-MM-dd")
                 };
 
-                var response = await _httpClient.PostAsJsonAsync($"{BaseApiUrl}/auth/register", registerData);
+                var jsonContent = JsonSerializer.Serialize(registerData);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                var response = await _httpClient.PostAsync($"{BaseApiUrl}/auth/register", content);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                _logger.LogInformation($"Register API Response: {responseContent}");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -87,26 +120,24 @@ namespace Web.NetDataDito.Controllers
                     return RedirectToAction(nameof(Login));
                 }
 
-                var errorContent = await response.Content.ReadAsStringAsync();
-                ModelState.AddModelError("", "Registration failed: " + errorContent);
+                _logger.LogWarning($"Registration failed: {responseContent}");
+                ModelState.AddModelError("", $"Registration failed: {responseContent}");
             }
             catch (Exception ex)
             {
-                // Log the exception
-                ModelState.AddModelError("", "An error occurred during registration " +ex);
+                _logger.LogError($"Registration Error: {ex.Message}");
+                ModelState.AddModelError("", "An error occurred during registration");
             }
 
             return View(model);
         }
 
-        // GET: /Account/ForgotPassword
         [HttpGet]
         public IActionResult ForgotPassword()
         {
             return View();
         }
 
-        // POST: /Account/ForgotPassword
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ForgotPassword(ForgotPasswordRequest model)
@@ -119,46 +150,53 @@ namespace Web.NetDataDito.Controllers
                     tcNumber = model.TcNumber
                 };
 
-                var response = await _httpClient.PostAsJsonAsync($"{BaseApiUrl}/forgetPassword/reset", forgotPasswordData);
+                var jsonContent = JsonSerializer.Serialize(forgotPasswordData);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                var response = await _httpClient.PostAsync($"{BaseApiUrl}/forgetPassword/reset", content);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                _logger.LogInformation($"Forgot Password API Response: {responseContent}");
 
                 if (response.IsSuccessStatusCode)
                 {
                     return View("SuccessInformation");
                 }
 
-                var errorContent = await response.Content.ReadAsStringAsync();
-                ModelState.AddModelError("", "Password reset failed: " + errorContent);
+                _logger.LogWarning($"Password reset failed: {responseContent}");
+                ModelState.AddModelError("", $"Password reset failed: {responseContent}");
             }
             catch (Exception ex)
             {
-                // Log the exception
-                ModelState.AddModelError("", "An error occurred during password reset "+ex);
+                _logger.LogError($"Forgot Password Error: {ex.Message}");
+                ModelState.AddModelError("", "An error occurred during password reset");
             }
 
             return View(model);
         }
 
-        // POST: /Account/Logout
         [HttpPost]
         public IActionResult Logout()
         {
-            // Clear any authentication cookies or session data
-            // Redirect to login page
+            // Clear all session data
+            HttpContext.Session.Clear();
             return RedirectToAction(nameof(Login));
         }
 
-        // Helper method to handle API errors
-        private void HandleApiError(HttpResponseMessage response)
+        private async Task<string> HandleApiError(HttpResponseMessage response)
         {
-            if (!response.IsSuccessStatusCode)
-            {
-                var error = response.Content.ReadAsStringAsync().Result;
-                throw new Exception($"API Error: {response.StatusCode} - {error}");
-            }
+            var content = await response.Content.ReadAsStringAsync();
+            _logger.LogError($"API Error: {response.StatusCode} - {content}");
+            return content;
+        }
+
+        // Helper method to check if user is logged in
+        private bool IsUserLoggedIn()
+        {
+            return !string.IsNullOrEmpty(HttpContext.Session.GetString("UserMsisdn"));
         }
     }
 
-    // Response classes for API
     public class LoginResponse
     {
         public bool Success { get; set; }

@@ -1,9 +1,7 @@
 ﻿@model Web.NetDataDito.Models.DashboardViewModel
 
-
 @{
     Layout = null;
-    <!-- Disable the main layout -->
 }
 
 <!DOCTYPE html>
@@ -13,100 +11,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <style>
         body {
-            background-color: #f5f5f5;
+            background-color: #FFE6E6;
             font-family: Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
             display: flex;
+            flex-direction: column;
+        }
+
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-        }
-
-        .dashboard-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 20px;
-        }
-
-        .usage-card {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            background: #fff;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
         }
 
-        .usage-title {
-            font-size: 18px;
+        .usage-section {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 50px;
+        }
+
+        .usage-item {
+            margin-bottom: 30px;
+        }
+
+        .usage-label {
+            font-size: 24px;
             font-weight: bold;
             margin-bottom: 10px;
+            color: #333;
         }
 
         .progress-bar-container {
             width: 100%;
-            height: 20px;
-            background-color: #ccc;
-            border-radius: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 5px;
             overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .progress-bar {
             height: 100%;
-            background-color: #28a745;
+            background-color: #FF0000;
+            transition: width 0.3s ease;
         }
 
-        .usage-details {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #666;
+        .logo-section {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
         }
 
         .logo {
-            margin-top: 50px;
-            text-align: center;
+            height: 80px;
+            width: auto;
         }
 
-            .logo img {
-                width: 100px;
-            }
+        .logo-text {
+            color: #800000;
+            font-size: 24px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
-    <div class="dashboard-container">
-        <div class="usage-card">
-            <div class="usage-title">Data</div>
-            <div class="progress-bar-container">
-                <div class="progress-bar" style="width: @(Model.UsedData * 100 / Model.TotalData)%"></div>
+    <div class="main-container">
+        <div class="usage-section">
+            <div class="usage-item">
+                <div class="usage-label">Data |</div>
+                <div class="progress-bar-container">
+                    @{
+                        var dataPercentage = Model.TotalData > 0 ? (Model.UsedData * 100.0 / Model.TotalData) : 0;
+                    }
+                    <div class="progress-bar" style="width: @dataPercentage%"></div>
+                </div>
             </div>
-            <div class="usage-details">Used @Model.UsedData GB / @Model.TotalData GB</div>
-        </div>
 
-        <div class="usage-card">
-            <div class="usage-title">Minutes</div>
-            <div class="progress-bar-container">
-                <div class="progress-bar" style="width: @(Model.UsedMinutes * 100 / Model.TotalMinutes)%"></div>
+            <div class="usage-item">
+                <div class="usage-label">Minutes |</div>
+                <div class="progress-bar-container">
+                    @{
+                        var minutesPercentage = Model.TotalMinutes > 0 ? (Model.UsedMinutes * 100.0 / Model.TotalMinutes) : 0;
+                    }
+                    <div class="progress-bar" style="width: @minutesPercentage%"></div>
+                </div>
             </div>
-            <div class="usage-details">Used @Model.UsedMinutes Minutes / @Model.TotalMinutes Minutes</div>
-        </div>
 
-        <div class="usage-card">
-            <div class="usage-title">SMS</div>
-            <div class="progress-bar-container">
-                <div class="progress-bar" style="width: @(Model.UsedSMS * 100 / Model.TotalSMS)%"></div>
+            <div class="usage-item">
+                <div class="usage-label">SMS |</div>
+                <div class="progress-bar-container">
+                    @{
+                        var smsPercentage = Model.TotalSMS > 0 ? (Model.UsedSMS * 100.0 / Model.TotalSMS) : 0;
+                    }
+                    <div class="progress-bar" style="width: @smsPercentage%"></div>
+                </div>
             </div>
-            <div class="usage-details">Used @Model.UsedSMS SMS / @Model.TotalSMS SMS</div>
         </div>
     </div>
 
-    <div class="logo">
-        <img src="~/images/Logo.png" alt="DataDito Logo" />
+    <div class="logo-section">
+        <img src="~/img/Logo.png" alt="DataDito Logo" class="logo" />
+        <span class="logo-text">DataDito</span>
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
