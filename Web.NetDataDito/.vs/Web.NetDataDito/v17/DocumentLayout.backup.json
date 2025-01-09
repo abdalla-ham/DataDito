@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "D:\\DataDito\\Web.NetDataDito\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\web.netdatadito.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\web.netdatadito.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\views\\shared\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\views\\shared\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\views\\shared\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\views\\shared\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\controllers\\dashboardcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\controllers\\dashboardcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\views\\shared\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -19,14 +39,6 @@
       "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\web.netdatadito.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\web.netdatadito.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\views\\shared\\successconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\views\\shared\\successconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -35,20 +47,8 @@
       "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\apimodels\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\controllers\\dashboardcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\controllers\\dashboardcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\views\\shared\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|solutionrelative:web.netdatadito\\views\\shared\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56A62643-0BF9-4D1B-8B13-80D14836DF23}|Web.NetDataDito\\Web.NetDataDito.csproj|d:\\datadito\\web.netdatadito\\web.netdatadito\\views\\shared\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -114,50 +114,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Register.cshtml",
-              "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\Shared\\Register.cshtml",
-              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Register.cshtml",
-              "RelativeToolTip": "Web.NetDataDito\\Views\\Shared\\Register.cshtml",
-              "ViewState": "AgIAAAABAAAAAAAAAAAMwBwBAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-29T14:17:34.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RegisterRequest.cs",
-              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\ApiModels\\RegisterRequest.cs",
-              "RelativeDocumentMoniker": "Web.NetDataDito\\ApiModels\\RegisterRequest.cs",
-              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\ApiModels\\RegisterRequest.cs",
-              "RelativeToolTip": "Web.NetDataDito\\ApiModels\\RegisterRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T16:04:58.728Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SuccessConfirmation.cshtml",
-              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\SuccessConfirmation.cshtml",
-              "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\Shared\\SuccessConfirmation.cshtml",
-              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\SuccessConfirmation.cshtml",
-              "RelativeToolTip": "Web.NetDataDito\\Views\\Shared\\SuccessConfirmation.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-29T14:18:43.748Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Program.cs",
               "RelativeDocumentMoniker": "Web.NetDataDito\\Program.cs",
@@ -169,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Web.NetDataDito.csproj",
               "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Web.NetDataDito.csproj",
               "RelativeDocumentMoniker": "Web.NetDataDito\\Web.NetDataDito.csproj",
@@ -182,33 +143,108 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Web.NetDataDito\\Controllers\\AccountController.cs",
               "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Web.NetDataDito\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAqwI8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAUwFUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-29T14:30:31.787Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Login.cshtml",
               "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\Shared\\Login.cshtml",
               "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Login.cshtml",
               "RelativeToolTip": "Web.NetDataDito\\Views\\Shared\\Login.cshtml",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAqwJIAAABPAAAAAAAAAA==",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAcwIwAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-29T13:49:36.623Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
+              "Title": "DashboardController .cs",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\DashboardController .cs",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Controllers\\DashboardController .cs",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\DashboardController .cs",
+              "RelativeToolTip": "Web.NetDataDito\\Controllers\\DashboardController .cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAIwE0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T16:35:44.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\Shared\\Index.cshtml",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Index.cshtml",
+              "RelativeToolTip": "Web.NetDataDito\\Views\\Shared\\Index.cshtml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAcwJUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-29T14:16:43.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DashboardViewModel.cs",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\DashboardViewModel.cs",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Models\\DashboardViewModel.cs",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\DashboardViewModel.cs",
+              "RelativeToolTip": "Web.NetDataDito\\Models\\DashboardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T20:17:31.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SuccessConfirmation.cshtml",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\SuccessConfirmation.cshtml",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\Shared\\SuccessConfirmation.cshtml",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\SuccessConfirmation.cshtml",
+              "RelativeToolTip": "Web.NetDataDito\\Views\\Shared\\SuccessConfirmation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-29T14:18:43.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegisterRequest.cs",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\ApiModels\\RegisterRequest.cs",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\ApiModels\\RegisterRequest.cs",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\ApiModels\\RegisterRequest.cs",
+              "RelativeToolTip": "Web.NetDataDito\\ApiModels\\RegisterRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T16:04:58.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Register.cshtml",
+              "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\Shared\\Register.cshtml",
+              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Register.cshtml",
+              "RelativeToolTip": "Web.NetDataDito\\Views\\Shared\\Register.cshtml",
+              "ViewState": "AgIAAAABAAAAAAAAAAAMwBwBAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-29T14:17:34.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "Web.NetDataDito\\Models\\RegisterViewModel.cs",
@@ -216,12 +252,11 @@
               "RelativeToolTip": "Web.NetDataDito\\Models\\RegisterViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T14:29:18.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-29T14:29:18.272Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\ApiModels\\LoginRequest.cs",
               "RelativeDocumentMoniker": "Web.NetDataDito\\ApiModels\\LoginRequest.cs",
@@ -242,42 +277,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-29T14:07:54.863Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web.NetDataDito\\Views\\Shared\\Index.cshtml",
-              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Views\\Shared\\Index.cshtml",
-              "RelativeToolTip": "Web.NetDataDito\\Views\\Shared\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFwAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-29T14:16:43.162Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DashboardController .cs",
-              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\DashboardController .cs",
-              "RelativeDocumentMoniker": "Web.NetDataDito\\Controllers\\DashboardController .cs",
-              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Controllers\\DashboardController .cs",
-              "RelativeToolTip": "Web.NetDataDito\\Controllers\\DashboardController .cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAqwFMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T16:35:44.221Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DashboardViewModel.cs",
-              "DocumentMoniker": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\DashboardViewModel.cs",
-              "RelativeDocumentMoniker": "Web.NetDataDito\\Models\\DashboardViewModel.cs",
-              "ToolTip": "D:\\DataDito\\Web.NetDataDito\\Web.NetDataDito\\Models\\DashboardViewModel.cs",
-              "RelativeToolTip": "Web.NetDataDito\\Models\\DashboardViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T20:17:31.333Z"
             },
             {
               "$type": "Document",

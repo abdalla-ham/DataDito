@@ -41,44 +41,47 @@ namespace Web.NetDataDito.Controllers
                 var jsonContent = JsonSerializer.Serialize(loginData);
                 var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
-                var response = await _httpClient.PostAsync($"{BaseApiUrl}/auth/login", content);
-                var responseContent = await response.Content.ReadAsStringAsync();
+                // First, check if user exists
+                var userCheckResponse = await _httpClient.GetAsync($"{BaseApiUrl}/customer/getCustomerByMsisdn?msisdn={model.Msisdn}");
+
+                if (!userCheckResponse.IsSuccessStatusCode)
+                {
+                    return Json(new { success = false, message = "User not found. Please register first." });
+                }
+
+                // Proceed with login
+                var loginResponse = await _httpClient.PostAsync($"{BaseApiUrl}/auth/login", content);
+                var responseContent = await loginResponse.Content.ReadAsStringAsync();
 
                 _logger.LogInformation($"Login API Response: {responseContent}");
 
-                if (response.IsSuccessStatusCode)
+                if (loginResponse.IsSuccessStatusCode)
                 {
                     if (responseContent.Contains("Login successful"))
                     {
                         // Store user information in session
                         HttpContext.Session.SetString("UserMsisdn", model.Msisdn);
-                        string email = responseContent.Split(':').LastOrDefault()?.Trim() ?? "";
-                        HttpContext.Session.SetString("UserEmail", email);
 
-                        // Store login timestamp
-                        HttpContext.Session.SetString("LoginTime", DateTime.Now.ToString());
+                        // Get user's package information
+                        var packageResponse = await _httpClient.GetAsync($"{BaseApiUrl}/packages/getUserPackageByMsisdn?msisdn={model.Msisdn}");
+                        var packageContent = await packageResponse.Content.ReadAsStringAsync();
 
-                        return Json(new { success = true, email = email });
+                        if (packageResponse.IsSuccessStatusCode)
+                        {
+                            HttpContext.Session.SetString("UserPackage", packageContent);
+                        }
+
+                        return Json(new { success = true });
                     }
-                    else
-                    {
-                        _logger.LogWarning($"Login failed for user {model.Msisdn}");
-                        return Json(new { success = false, message = "Invalid credentials" });
-                    }
+                    return Json(new { success = false, message = "Invalid credentials" });
                 }
 
-                _logger.LogWarning($"Login failed with status code: {response.StatusCode}");
-                return Json(new { success = false, message = "Invalid credentials" });
-            }
-            catch (HttpRequestException ex)
-            {
-                _logger.LogError($"HTTP Request Error during login: {ex.Message}");
-                return Json(new { success = false, message = "Cannot connect to the server" });
+                return Json(new { success = false, message = "Login failed" });
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Unexpected Error during login: {ex.Message}");
-                return Json(new { success = false, message = "An unexpected error occurred" });
+                _logger.LogError($"Login Error: {ex.Message}");
+                return Json(new { success = false, message = "An error occurred during login" });
             }
         }
 
