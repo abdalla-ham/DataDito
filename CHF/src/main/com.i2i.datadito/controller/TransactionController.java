@@ -1,13 +1,12 @@
 package com.i2i.datadito.Controller;
 
-
 import com.i2i.datadito.DTOs.DataTransactionDTO;
 import com.i2i.datadito.DTOs.SmsTransactionDTO;
 import com.i2i.datadito.DTOs.TransactionRequest;
 import com.i2i.datadito.DTOs.VoiceTransactionDTO;
-//import com.i2i.datadito.Kafka.KafkaOperations;
+import com.i2i.datadito.Kafka.KafkaOperations;
 import com.fasterxml.jackson.databind.ObjectMapper;
-//import com.i2i.datadito.kafka.message.BalanceType;
+import com.i2i.datadito.kafka.message.BalanceType;
 import com.i2i.datadito.voltdb.VoltDbOperators;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -58,13 +57,13 @@ public class TransactionController {
         if (currentBalance >= dataTransactionDTO.getDataUsage()) {
             int updatedBalance = currentBalance - dataTransactionDTO.getDataUsage();
             voltDbOperators.updateDataBalance(updatedBalance, dataTransactionDTO.getMsisdn());
-//            KafkaOperations.sendUsageRecordMessage(BalanceType.DATA, dataTransactionDTO.getMsisdn(), null, updatedBalance, new Timestamp(System.currentTimeMillis()));
-//
-//            if (updatedBalance == 0) {
-//                sendDataNotification(dataTransactionDTO.getMsisdn(), updatedBalance);
-//            }
-//
-//            KafkaOperations.sendUpdatedBalanceMessage(BalanceType.DATA, dataTransactionDTO.getMsisdn(), updatedBalance);
+            KafkaOperations.sendUsageRecordMessage(BalanceType.DATA, dataTransactionDTO.getMsisdn(), null, updatedBalance, new Timestamp(System.currentTimeMillis()));
+
+            if (updatedBalance == 0) {
+                sendDataNotification(dataTransactionDTO.getMsisdn(), updatedBalance);
+            }
+
+            KafkaOperations.sendUpdatedBalanceMessage(BalanceType.DATA, dataTransactionDTO.getMsisdn(), updatedBalance);
             return ResponseEntity.ok("Data transaction executed successfully. Remaining balance: " + updatedBalance);
         } else {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Insufficient data balance.");
@@ -76,13 +75,13 @@ public class TransactionController {
         if (currentBalance > 0) {
             int updatedBalance = currentBalance - 1;
             voltDbOperators.updateSmsBalance(updatedBalance, smsTransactionDTO.getSenderMsisdn());
-//            KafkaOperations.sendUsageRecordMessage(BalanceType.SMS, smsTransactionDTO.getSenderMsisdn(), smsTransactionDTO.getReceiverMsisdn(), updatedBalance, new Timestamp(System.currentTimeMillis()));
+            KafkaOperations.sendUsageRecordMessage(BalanceType.SMS, smsTransactionDTO.getSenderMsisdn(), smsTransactionDTO.getReceiverMsisdn(), updatedBalance, new Timestamp(System.currentTimeMillis()));
 
-//            if (updatedBalance == 0) {
-//                sendSmsNotification(smsTransactionDTO.getSenderMsisdn(), updatedBalance);
-//            }
+            if (updatedBalance == 0) {
+                sendSmsNotification(smsTransactionDTO.getSenderMsisdn(), updatedBalance);
+            }
 
-//            KafkaOperations.sendUpdatedBalanceMessage(BalanceType.SMS, smsTransactionDTO.getSenderMsisdn(), updatedBalance);
+            KafkaOperations.sendUpdatedBalanceMessage(BalanceType.SMS, smsTransactionDTO.getSenderMsisdn(), updatedBalance);
             return ResponseEntity.ok("SMS transaction executed successfully. Remaining balance: " + updatedBalance);
         } else {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Insufficient SMS balance.");
@@ -93,29 +92,29 @@ public class TransactionController {
         int currentBalance = voltDbOperators.getVoiceBalance(voiceTransactionDTO.getCallerMsisdn());
         if (currentBalance >= voiceTransactionDTO.getDuration()) {
             int updatedBalance = currentBalance - voiceTransactionDTO.getDuration();
-            voltDbOperators.updateVoiceBalance(updatedBalance, voiceTransactionDTO.getCallerMsisdn());
-//            KafkaOperations.sendUsageRecordMessage(BalanceType.VOICE, voiceTransactionDTO.getCallerMsisdn(), voiceTransactionDTO.getCalleeMsisdn(), updatedBalance, new Timestamp(System.currentTimeMillis()));
-//
-//            if (updatedBalance == 0) {
-//                sendVoiceNotification(voiceTransactionDTO.getCallerMsisdn(), updatedBalance);
-//            }
-//
-//            KafkaOperations.sendUpdatedBalanceMessage(BalanceType.VOICE, voiceTransactionDTO.getCallerMsisdn(), updatedBalance);
+           voltDbOperators.updateVoiceBalance(updatedBalance, voiceTransactionDTO.getCallerMsisdn());
+            KafkaOperations.sendUsageRecordMessage(BalanceType.VOICE, voiceTransactionDTO.getCallerMsisdn(), voiceTransactionDTO.getCalleeMsisdn(), updatedBalance, new Timestamp(System.currentTimeMillis()));
+
+            if (updatedBalance == 0) {
+                sendVoiceNotification(voiceTransactionDTO.getCallerMsisdn(), updatedBalance);
+            }
+
+            KafkaOperations.sendUpdatedBalanceMessage(BalanceType.VOICE, voiceTransactionDTO.getCallerMsisdn(), updatedBalance);
             return ResponseEntity.ok("Voice transaction executed successfully. Remaining balance: " + updatedBalance);
         } else {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Insufficient voice balance.");
         }
     }
 
-//    private void sendDataNotification(String msisdn, int updatedBalance) {
-//        KafkaOperations.sendNotificationMessage("User", "Data", msisdn, null, BalanceType.DATA, 0, "0", new Timestamp(System.currentTimeMillis()));
-//    }
-//
-//    private void sendSmsNotification(String msisdn, int updatedBalance) {
-//        KafkaOperations.sendNotificationMessage("User", "SMS", msisdn, null, BalanceType.SMS, 0, "0", new Timestamp(System.currentTimeMillis()));
-//    }
-//
-//    private void sendVoiceNotification(String msisdn, int updatedBalance) {
-//        KafkaOperations.sendNotificationMessage("User", "Voice", msisdn, null, BalanceType.VOICE, 0, "0", new Timestamp(System.currentTimeMillis()));
-//    }
+    private void sendDataNotification(String msisdn, int updatedBalance) {
+        KafkaOperations.sendNotificationMessage("User", "Data", msisdn, null, BalanceType.DATA, 0, "0", new Timestamp(System.currentTimeMillis()));
+    }
+
+    private void sendSmsNotification(String msisdn, int updatedBalance) {
+        KafkaOperations.sendNotificationMessage("User", "SMS", msisdn, null, BalanceType.SMS, 0, "0", new Timestamp(System.currentTimeMillis()));
+    }
+
+    private void sendVoiceNotification(String msisdn, int updatedBalance) {
+        KafkaOperations.sendNotificationMessage("User", "Voice", msisdn, null, BalanceType.VOICE, 0, "0", new Timestamp(System.currentTimeMillis()));
+    }
 }
