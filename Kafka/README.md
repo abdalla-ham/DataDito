@@ -50,5 +50,6 @@ Run the following commands in order to start all services in the correct order:
 **Start the Kafka broker service**
 **```sudo bin/kafka-server-start.sh config/server.properties```**
 
-# Once all services have successfully launched, you will have a basic Kafka environment running and ready to use.
+# Once all services have successfully launched, you will have a basic Kafka environment running and ready to use. 
+# Update Kafka.url=<Your-external-ip>:9092
 
