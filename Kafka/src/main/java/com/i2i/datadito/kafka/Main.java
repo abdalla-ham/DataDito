@@ -11,20 +11,19 @@ import java.sql.Timestamp;
 public class Main {
         public static void main(String[] args) {
 
-            //test for Publisher and Subscriber
 
-            MessageProducer<NotificationMessage> publisher = new MessageProducer<>();
-            publisher.createNotificationMessageProducer();
-            NotificationMessage notificationMessage = new NotificationMessage("test", "test","5530344666","mustafyasinemir@gmail.com", BalanceType.SMS, 80, "20",new Timestamp(System.currentTimeMillis()));
-            publisher.send(notificationMessage, KafkaTopicConstants.NOTIFICATION_TOPIC);
-            publisher.close();
-
+            MessageProducer<NotificationMessage> producer = new MessageProducer<>();
+            producer.createNotificationMessageProducer();
+            NotificationMessage notificationMessage = new NotificationMessage("imadeddine", "belkat","624605972800724","imadbelkat@gmail.com", BalanceType.SMS, 80, "20",new Timestamp(System.currentTimeMillis()));
+            producer.send(notificationMessage, KafkaTopicConstants.NOTIFICATION_TOPIC);
+            producer.close();
 
 
-            MessageConsumer<BalanceMessage> subscriber = new MessageConsumer<>();
-            subscriber.createBalanceMessageConsumer();
+
+            MessageConsumer<BalanceMessage> consumer = new MessageConsumer<>();
+            consumer.createBalanceMessageConsumer();
             while(true){
-                ConsumerRecords<String, BalanceMessage> records = subscriber.poll();
+                ConsumerRecords<String, BalanceMessage> records = consumer.poll();
                 for(ConsumerRecord<String, BalanceMessage> record : records){
                     System.out.println(record.value().toString());
                 }
