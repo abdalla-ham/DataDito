@@ -22,7 +22,7 @@
 
 Apache Kafka is an open source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.
 
-Follow the steps below to set up Apache Kafka Server in the Cloud on Azure, AWS, or GCP. Deploy using the public image available in the marketplaces.
+Follow the steps below to set up Apache Kafka Server in the Cloud on GCP. Deploy using the public image available in the marketplaces.
 
 ### Link to Kafka on GCP:
 [Kafka on GCP - Marketplace](https://console.cloud.google.com/marketplace/product/cloud-infrastructure-services/kafka-ubuntu?inv=1&invt=Abmd0A&project=metal-pod-435218-m3)
