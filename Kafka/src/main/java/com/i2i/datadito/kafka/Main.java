@@ -14,7 +14,8 @@ public class Main {
 
             MessageProducer<NotificationMessage> producer = new MessageProducer<>();
             producer.createNotificationMessageProducer();
-            NotificationMessage notificationMessage = new NotificationMessage("imadeddine", "belkat","624605972800724","imadbelkat@gmail.com", BalanceType.SMS, 80, "20",new Timestamp(System.currentTimeMillis()));
+            NotificationMessage notificationMessage = new NotificationMessage("imadeddine", "belkat","624605972800724","imadbelkat@gmail.com",
+                    BalanceType.SMS, 80, "20",new Timestamp(System.currentTimeMillis()));
             producer.send(notificationMessage, KafkaTopicConstants.NOTIFICATION_TOPIC);
             producer.close();
 
