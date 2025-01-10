@@ -36,19 +36,19 @@ Once connected and logged in, the following section explains how to start using 
 Run the following commands in order to start all services in the correct order:
 
 
-# Change current path to Kafka installation directory
-```cd /opt/kafka/```
+**Change current path to Kafka installation directory**
+**```cd /opt/kafka/```**
 
-# Start the ZooKeeper service
-```sudo bin/zookeeper-server-start.sh config/zookeeper.properties```
+**Start the ZooKeeper service**
+**```sudo bin/zookeeper-server-start.sh config/zookeeper.properties```**
 
 # Open another terminal session to complete the next steps.
 
-# Change current path to Kafka installation directory again
-```cd /opt/kafka/```
+**Change current path to Kafka installation directory again**
+**```cd /opt/kafka/```**
 
-# Start the Kafka broker service
-```sudo bin/kafka-server-start.sh config/server.properties```
+**Start the Kafka broker service**
+**```sudo bin/kafka-server-start.sh config/server.properties```**
 
 # Once all services have successfully launched, you will have a basic Kafka environment running and ready to use.
 
