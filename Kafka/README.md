@@ -51,3 +51,4 @@ cd /opt/kafka/
 sudo bin/kafka-server-start.sh config/server.properties
 
 # Once all services have successfully launched, you will have a basic Kafka environment running and ready to use.
+
