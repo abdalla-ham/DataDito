@@ -51,5 +51,5 @@ Run the following commands in order to start all services in the correct order:
 **```sudo bin/kafka-server-start.sh config/server.properties```**
 
 # Once all services have successfully launched, you will have a basic Kafka environment running and ready to use. 
-# Update Kafka.url=<Your-external-ip>:9092
+# Update Kafka.url="Your-external-ip":9092
 
