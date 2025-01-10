@@ -37,18 +37,18 @@ Run the following commands in order to start all services in the correct order:
 
 
 # Change current path to Kafka installation directory
-<cd /opt/kafka/>
+```cd /opt/kafka/```
 
 # Start the ZooKeeper service
-<sudo bin/zookeeper-server-start.sh config/zookeeper.properties>
+```sudo bin/zookeeper-server-start.sh config/zookeeper.properties```
 
 # Open another terminal session to complete the next steps.
 
 # Change current path to Kafka installation directory again
-<cd /opt/kafka/>
+```cd /opt/kafka/```
 
 # Start the Kafka broker service
-<sudo bin/kafka-server-start.sh config/server.properties>
+```sudo bin/kafka-server-start.sh config/server.properties```
 
 # Once all services have successfully launched, you will have a basic Kafka environment running and ready to use.
 
