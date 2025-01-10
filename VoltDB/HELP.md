@@ -3,7 +3,7 @@ Maybe this can help you understand some stuff regarding running the voltDB codes
 
 1. check that docker is working 
 2. then pull voltdb/voltdb-community (I used the terminal in intellij) --> docker pull voltdb/voltdb-community
-3. to run voltDB --> docker run -it --rm -p 21212:21212 -p 8080:8080 -p 55004:55004 -v voltdb_data:/var/voltdb -e HOST_COUNT=1 voltdb/voltdb-community voltdb start -c 1 --ignore=thp
+3. to run voltDB -->  docker run -it --rm --name voltdb-container -p 21212:21212 -p 8080:8080 -p 55004:55004 -v voltdb_data:/var/voltdb -e HOST_COUNT=1 voltdb/voltdb-community voltdb start -c 1 --ignore=thp
 4. to connect voltDB to the DBeaver:
    Create new driver :
    upload the jar file, I used (voltdbclient-14.0.1.jar)
@@ -69,8 +69,9 @@ IN SSH :
 - sudo docker pull voltdb/voltdb-community
 - sudo docker ps
 - sudo docker ps -a
-- sudo docker run -it --rm -p 21212:21212 -p 8080:8080 -p 55004:55004 -v voltdb_data:/var/voltdb -e HOST_COUNT=1 voltdb/voltdb-community voltdb start -c 1 --ignore=thp
-- sudo docker exec -it node1 bash  //// node1 is the container name OR container id
+- sudo docker run -it --rm --name voltdb-container -p 21212:21212 -p 8080:8080 -p 55004:55004 -v voltdb_data:/var/voltdb -e HOST_COUNT=1 voltdb/voltdb-community voltdb start -c 1 --ignore=thp
+
+- sudo docker exec -it voltdb-container bash//// voltdb-container is the container name
 - sqlcmd
 
 

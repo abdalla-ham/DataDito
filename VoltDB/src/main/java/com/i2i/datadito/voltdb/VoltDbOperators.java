@@ -15,8 +15,8 @@ public class VoltDbOperators {
   private static final Logger logger = LogManager.getLogger(VoltDbOperators.class);
 
     public VoltDbOperators() {
-       // this.ip = "34.42.35.90";
-        this.ip = "localhost";
+       // this.ip = "localhost";
+        this.ip = "4.178.178.188";  // France
         this.port = 21212;
         initializeClient();
 
@@ -85,14 +85,14 @@ public class VoltDbOperators {
     public void updateVoiceBalance(int voiceUsage, String msisdn){
         handleProcedure("UPDATE_CUSTOMER_MINUTES_BALANCE_BY_MSISDN", voiceUsage, msisdn);
     }
-    public void insertCustomer(int cust_id, String name, String surname, String msisdn, String email, String password, Timestamp sdate, String tc_no) {
-        handleProcedureInsertCustomer( "INSERT_NEW_CUSTOMER", cust_id, name, surname, msisdn, email, password, sdate, tc_no);
+    public void insertCustomer(int cust_id, String msisdn, String name, String surname,  String email, String password, Timestamp sdate, String tc_no) {
+        handleProcedureInsertCustomer( "INSERT_NEW_CUSTOMER", cust_id, msisdn, name, surname, email, password, sdate, tc_no);
     }
-    public void insertBalance(int balance_id, int package_id, int cust_id, int partition_id, int bal_lvl_minutes, int bal_lvl_sms, int bal_lvl_data, Timestamp sdate, Timestamp edate, int price, int bal_lvl_money) {
-        handleProcedureInsertBalance("INSERT_BALANCE_TO_CUSTOMER", balance_id, package_id, cust_id, partition_id, bal_lvl_minutes, bal_lvl_sms, bal_lvl_data, sdate, edate, price , bal_lvl_money);
+    public void insertBalance(int balance_id, int cust_id, int package_id, int bal_lvl_minutes, int bal_lvl_sms, int bal_lvl_data, Timestamp sdate, Timestamp edate) {
+        handleProcedureInsertBalance("INSERT_BALANCE_TO_CUSTOMER", balance_id, cust_id, package_id, bal_lvl_minutes, bal_lvl_sms, bal_lvl_data, sdate, edate);
     }
     public void insertPackage(String procedureName,int package_id, String package_name , double price, int amount_minutes, int amount_data, int amount_sms, int period) {
-        handleProcedureInsertPackage("INSERT_PACKAGE", package_id, package_name, price, amount_minutes, amount_data, amount_sms, period);
+        handleProcedureInsertPackage( procedureName, package_id, package_name, price, amount_minutes, amount_data, amount_sms, period);
     }
     public int checkCustomerExists(String email, String tc_no){
         return handleProcedureCheck("CHECK_CUSTOMER_EXISTS_BY_EMAIL_AND_TCNO", email, tc_no);
@@ -168,24 +168,15 @@ public class VoltDbOperators {
             throw new RuntimeException("Error while calling procedure: " + procedureName, e);
         }
     }
-    public void updatePassword(String email, String tcNumber, String msisdn, String encryptedPassword) {
-        try {
-            Client client1 = getClient();
-            ClientResponse response = client1.callProcedure("UPDATE_PASSWORD", encryptedPassword, email, msisdn, tcNumber);
-            if (response.getStatus() != ClientResponse.SUCCESS) {
-                throw new RuntimeException("Procedure call failed: " + response.getStatusString());
-            }
-            client1.close();
-        } catch (ProcCallException | IOException e) {
-            logger.error("Error while updating password for email: " + email, e);
-            throw new RuntimeException("Error while updating password for email: " + email, e);
-        } catch (InterruptedException e) {
-            logger.error("Update password operation was interrupted for email: " + email, e);
-            throw new RuntimeException("Update password operation was interrupted for email: " + email, e);
-        }
+    public void updatePassword(String email, String tcNumber, String encryptedPassword) throws
+            IOException,
+            ProcCallException,
+            InterruptedException {
+        Client client1 = getClient();
+        client1.callProcedure("UPDATE_CUSTOMER_PASSWORD", encryptedPassword, email, tcNumber);
+        client1.close();
+
     }
-
-
     public UserDetails getUserDetails(String msisdn) {
         try {
             ClientResponse response = client.callProcedure("GET_CUSTOMER_INFO_PACKAGE_BY_MSISDN", msisdn);
@@ -217,8 +208,7 @@ public class VoltDbOperators {
     public int getPackageId(String msisdn) {
         return getUserDetails(msisdn).getPackageId();
     }
-    private void handleProcedureInsertCustomer(String procedureName,int cust_id, String name, String surname, String msisdn, String email, String password, Timestamp sdate, String tc_no){
-
+    private void handleProcedureInsertCustomer(String procedureName,int cust_id,  String msisdn, String name, String surname, String email, String password, Timestamp sdate, String tc_no){
         try {
             ClientResponse response = client.callProcedure(procedureName, cust_id, msisdn, name , surname, email, password, sdate, tc_no);
             if (response.getStatus() != ClientResponse.SUCCESS){
@@ -229,10 +219,10 @@ public class VoltDbOperators {
             throw new RuntimeException("Error while calling procedure: " + procedureName, e);
         }
     }
-    private void handleProcedureInsertBalance(String procedureName, int balance_id, int package_id, int cust_id, int partition_id, int bal_lvl_minutes, int bal_lvl_sms, int bal_lvl_data, Timestamp sdate, Timestamp edate, int price, int bal_lvl_money){
+    private void handleProcedureInsertBalance(String procedureName, int balance_id, int cust_id, int package_id, int bal_lvl_minutes, int bal_lvl_sms, int bal_lvl_data, Timestamp sdate, Timestamp edate) {
         try {
-            ClientResponse response = client.callProcedure(procedureName,balance_id, package_id, cust_id, partition_id, bal_lvl_minutes, bal_lvl_sms, bal_lvl_data, sdate, edate, price , bal_lvl_money);
-            if (response.getStatus() != ClientResponse.SUCCESS){
+            ClientResponse response = client.callProcedure(procedureName, balance_id, cust_id, package_id, bal_lvl_minutes, bal_lvl_sms, bal_lvl_data, sdate, edate);
+            if (response.getStatus() != ClientResponse.SUCCESS) {
                 throw new RuntimeException("Procedure call failed: " + response.getStatusString());
             }
         } catch (IOException | ProcCallException e) {
@@ -288,7 +278,7 @@ public class VoltDbOperators {
             throw new RuntimeException("Error while calling procedure: GET_PACKAGE_INFO_BY_MSISDN", e);
         }
     }
-    public Optional<VoltCustomer> getCustomerInfoByMsisdn(String msisdn) throws IOException, ProcCallException, InterruptedException {
+    public Optional<VoltCustomer> getCustomerByMsisdn(String msisdn) throws IOException, ProcCallException, InterruptedException {
         Client client1 = getClient();
         ClientResponse response = client1.callProcedure("GET_CUSTOMER_INFO_BY_MSISDN", msisdn);
 
@@ -321,7 +311,6 @@ public class VoltDbOperators {
         logger.error("Customer not found with this MSISDN: " + msisdn);
         throw new RuntimeException("Customer not found with this MSISDN: " + msisdn);
     }
-
     public VoltCustomerBalance getRemainingCustomerBalanceByMsisdn(String msisdn) throws IOException, ProcCallException, InterruptedException {
         Client client1 = getClient();
         ClientResponse response = client1.callProcedure("GET_REMAINING_CUSTOMER_BALANCE_BY_MSISDN", msisdn);
@@ -344,7 +333,6 @@ public class VoltDbOperators {
                         sdate,
                         edate
                 );
-
                 client1.close();
                 return balanceResponse;
             }
@@ -353,8 +341,6 @@ public class VoltDbOperators {
         logger.error("Customer balance not found for msisdn: " + msisdn);
         throw new RuntimeException("Customer balance not found for msisdn: " + msisdn);
     }
-
-
     public VoltPackageDetails getPackageInfoByPackageId(int packageId) throws IOException, ProcCallException, InterruptedException {
         Client client1 = getClient();
         ClientResponse response = client.callProcedure("GET_PACKAGE_INFO_BY_PACKAGE_ID", packageId);
@@ -372,6 +358,23 @@ public class VoltDbOperators {
         logger.error("Package not found with ID:", packageId);
         throw new RuntimeException("Package not found with ID: " + packageId);
     }
+    public int getPackageIdByName(String package_name) {
+        return handleProcedureAsInt2("GET_PACKAGE_ID_BY_PACKAGE_NAME", package_name);
+    }
+    private int handleProcedureAsInt2(String procedureName, String package_name) {
+        try {
+            ClientResponse response = client.callProcedure(procedureName, package_name);
+            VoltTable resultTable = response.getResults()[0];
+            if (resultTable.advanceRow()) {
+                return (int) resultTable.getLong(0); // Cast long to int
+            } else {
+                throw new RuntimeException("No data returned from procedure");
+            }
+        } catch (IOException | ProcCallException e) {
+            logger.error("Error while calling procedure: " + procedureName, e);
+            throw new RuntimeException("Error while calling procedure: " + procedureName, e);
+        }
+    }
     // is for safely closing a VoltDB client connection
     public void close() {
         if (client != null) {
@@ -383,5 +386,4 @@ public class VoltDbOperators {
             }
         }
     }
-
 }

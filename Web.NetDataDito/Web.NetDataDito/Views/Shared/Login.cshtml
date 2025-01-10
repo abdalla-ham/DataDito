@@ -134,7 +134,7 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
+                        $(document).ready(function () {
             $('#login-form').on('submit', function (e) {
                 e.preventDefault();
 
@@ -142,6 +142,10 @@
                     msisdn: $('#Msisdn').val(),
                     password: $('#Password').val()
                 };
+
+                // Disable login button and show loading state
+                $('.login-button').prop('disabled', true).text('Logging in...');
+                $('#loginError').hide();
 
                 $.ajax({
                     url: '/Account/Login',
@@ -155,8 +159,12 @@
                             $('#loginError').text(response.message).show();
                         }
                     },
-                    error: function () {
-                        $('#loginError').text('An error occurred during login').show();
+                    error: function (xhr, status, error) {
+                        $('#loginError').text('Cannot connect to the server. Please try again later.').show();
+                        console.error('Error:', error);
+                    },
+                    complete: function() {
+                        $('.login-button').prop('disabled', false).text('Login');
                     }
                 });
             });

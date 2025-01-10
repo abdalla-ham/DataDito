@@ -1,20 +1,21 @@
 
 -- AOM --
 
-- updatePassword(String email, String tcNumber, String msisdn, String encryptedPassword);
+- updatePassword(String email, String tcNumber, String encryptedPassword);
 - insertCustomer(int cust_id, String name, String surname, String msisdn, String email, String password, Timestamp sdate, String tc_no);
 - insertPackage(String procedureName,int package_id, String package_name , double price, int amount_minutes, int amount_data, int amount_sms, int period);
-- insertBalance(int balance_id, int package_id, int cust_id, int partition_id, int bal_lvl_minutes, int bal_lvl_sms, int bal_lvl_data, Timestamp sdate, Timestamp edate, int price, int bal_lvl_money);
+- insertBalance(int balance_id, int cust_id, int package_id, int bal_lvl_minutes, int bal_lvl_sms, int bal_lvl_data, Timestamp sdate, Timestamp edate);
 - checkCustomerExists(String email, String tc_no);
 - getPackageName(String msisdn);
 - getCustomerPassword(String msisdn);
 - getCustomerIdByEmailAndTC(String email, String tc_no);
 - getMaxCustomerId();
 - getMaxBalanceId();
-- getCustomerInfoByMsisdn(String msisdn);
+- getCustomerByMsisdn(msisdn);
 - getRemainingCustomerBalanceByMsisdn(String msisdn);
 - getPackageInfoByPackageId(int packageId);
 - getPackageByMsisdn(String msisdn);
+- getPackageIdByName(String package_name);
 
 -- CHF --
 
