@@ -3,34 +3,37 @@ package com.i2i.datadito.voltdb;
 import java.sql.Timestamp;
 
 public class VoltCustomer {
-    private int cust_id;
+    private Integer customerId;
     private String msisdn;
     private String name;
-    private String surName;
+    private String surname;
     private String email;
     private String password;
-    private String tc_no;
+    private String TCNumber;
     private Timestamp sDate;
 
     // Constructor
-    public VoltCustomer(int cust_id, String msisdn, String name, String surName, String email, String password, String tc_no, Timestamp sDate) {
-        this.cust_id = cust_id;
+    public VoltCustomer(int customerId, String msisdn, String name, String surname, String email, String password, String TCNumber, Timestamp sDate) {
+        this.customerId = customerId;
         this.msisdn = msisdn;
         this.name = name;
-        this.surName = surName;
+        this.surname = surname;
         this.email = email;
         this.password = password;
-        this.tc_no = tc_no;
+        this.TCNumber = TCNumber;
         this.sDate = sDate;
+    }
+    public VoltCustomer(){
+
     }
 
     // Getters and Setters
-    public int getCust_id() {
-        return cust_id;
+    public Integer getCustomerId() {
+        return customerId;
     }
 
-    public void setCust_id(int cust_id) {
-        this.cust_id = cust_id;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
     public String getMsisdn() {
@@ -49,12 +52,12 @@ public class VoltCustomer {
         this.name = name;
     }
 
-    public String getSurName() {
-        return surName;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setSurName(String surName) {
-        this.surName = surName;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getEmail() {
@@ -73,19 +76,19 @@ public class VoltCustomer {
         this.password = password;
     }
 
-    public String getTc_no() {
-        return tc_no;
+    public String getTCNumber() {
+        return TCNumber;
     }
 
-    public void setTc_no(String tc_no) {
-        this.tc_no = tc_no;
+    public void setTCNumber(String TCNumber) {
+        this.TCNumber = TCNumber;
     }
 
-    public Timestamp getSDate() {
+    public Timestamp getsDate() {
         return sDate;
     }
 
-    public void setSDate(Timestamp sDate) {
+    public void setsDate(Timestamp sDate) {
         this.sDate = sDate;
     }
 
@@ -93,13 +96,13 @@ public class VoltCustomer {
     @Override
     public String toString() {
         return "VoltCustomer{" +
-                "cust_id=" + cust_id +
+                "cust_id=" + customerId +
                 ", msisdn='" + msisdn + '\'' +
                 ", name='" + name + '\'' +
-                ", surName='" + surName + '\'' +
+                ", surName='" + surname + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", tc_no='" + tc_no + '\'' +
+                ", tc_no='" + TCNumber + '\'' +
                 ", sDate=" + sDate +
                 '}';
     }
