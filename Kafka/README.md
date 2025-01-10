@@ -1,6 +1,6 @@
 <div align="center">
 
-# Kafka Steps
+# Kafka Deployment
 
 1. **Create Java Project** - *Local*
    
@@ -33,23 +33,23 @@ Once connected and logged in, the following section explains how to start using 
 
 ## Start the Kafka Environment
 
-Run the following commands in order to start all services in the correct order:
+### Run the following commands in order to start all services in the correct order:
 
 
-**Change current path to Kafka installation directory**
+1. **Change current path to Kafka installation directory**
 **```cd /opt/kafka/```**
 
-**Start the ZooKeeper service**
+2. **Start the ZooKeeper service**
 **```sudo bin/zookeeper-server-start.sh config/zookeeper.properties```**
 
-# Open another terminal session to complete the next steps.
+#### Open another terminal session to complete the next steps.
 
-**Change current path to Kafka installation directory again**
+3. **Change current path to Kafka installation directory again**
 **```cd /opt/kafka/```**
 
-**Start the Kafka broker service**
+4. **Start the Kafka broker service**
 **```sudo bin/kafka-server-start.sh config/server.properties```**
 
-## Once all services have successfully launched, you will have a basic Kafka environment running and ready to use. 
-### Update Kafka.url="Your-external-ip":9092
+### Once all services have successfully launched, you will have a basic Kafka environment running and ready to use. 
+**Update Kafka.url="External-ip":9092**
 
