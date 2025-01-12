@@ -37,4 +37,14 @@ public class BalanceMessage implements Message {
     public void setType(BalanceType type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "BalanceMessage{" +
+                "msisdn='" + msisdn + '\'' +
+                ", type=" + type +
+                ", amount=" + amount +
+                '}';
+    }
+
 }

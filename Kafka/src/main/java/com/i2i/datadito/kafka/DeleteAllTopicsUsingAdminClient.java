@@ -13,7 +13,7 @@ public class DeleteAllTopicsUsingAdminClient {
     public static void main(String[] args) {
         // Configure the AdminClient
         var config = new java.util.Properties();
-        config.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092"); // Adjust if necessary
+        config.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "34.106.88.121:9092"); // Adjust if necessary
 
         try (AdminClient adminClient = AdminClient.create(config)) {
             // List all topics

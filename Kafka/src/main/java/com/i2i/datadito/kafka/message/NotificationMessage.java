@@ -1,5 +1,7 @@
 package com.i2i.datadito.kafka.message;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.sql.Timestamp;
 
 public class NotificationMessage implements Message {
@@ -13,8 +15,14 @@ public class NotificationMessage implements Message {
     private final String threshold;
     private final Timestamp timestamp;
 
-    public NotificationMessage(String name, String lastname, String msisdn, String email, BalanceType type,
-            Integer amount, String threshold, Timestamp timestamp) {
+    public NotificationMessage(@JsonProperty("name") String name,
+                               @JsonProperty("lastname") String lastname,
+                               @JsonProperty("msisdn") String msisdn,
+                               @JsonProperty("email") String email,
+                               @JsonProperty("type") BalanceType type,
+                               @JsonProperty("amount") int amount,
+                               @JsonProperty("threshold") String threshold,
+                               @JsonProperty("timestamp") Timestamp timestamp) {
         this.name = name;
         this.lastname = lastname;
         this.msisdn = msisdn;
@@ -56,4 +64,19 @@ public class NotificationMessage implements Message {
     public Timestamp getTimestamp() {
         return timestamp;
     }
+
+    @Override
+    public String toString() {
+        return "NotificationMessage{" +
+                "name='" + name + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", msisdn='" + msisdn + '\'' +
+                ", email='" + email + '\'' +
+                ", type='" + type + '\'' +
+                ", amount=" + amount +
+                ", threshold='" + threshold + '\'' +
+                ", timestamp=" + timestamp +
+                '}';
+    }
+
 }
