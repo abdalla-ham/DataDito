@@ -20,8 +20,8 @@ public class NotificationService {
 
     // E-posta gönderim metodu
     private void sendEmail(String recipient, String subject, String body) {
-        final String senderEmail = "i2imailsender01@gmail.com"; // E-posta adresinizi girin
-        final String senderPassword = "zalc seob txam nuzq"; // E-posta şifrenizi girin
+        final String senderEmail = "i2iemailsender@gmail.com"; // E-posta adresinizi girin
+        final String senderPassword = "iikn hcld bsjq nexz"; // E-posta şifrenizi girin
 
         Properties emailProps = new Properties();
         emailProps.put("mail.smtp.host", "smtp.gmail.com");
@@ -92,5 +92,6 @@ public class NotificationService {
         NotificationService service = new NotificationService();
         System.out.println("Starting Notification Service...");
         service.pollAndProcessMessages();
+       
     }
 }
