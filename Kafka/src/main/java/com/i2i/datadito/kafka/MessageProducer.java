@@ -14,7 +14,8 @@ import com.i2i.datadito.kafka.seralizer.NotificationMessageSer;
 
 import java.util.Properties;
 
-public class MessageProducer<T extends Message> {
+public class MessageProducer<T extends Message> implements AutoCloseable {
+
 
     private Producer<String, T> producer;
 
@@ -59,6 +60,7 @@ public class MessageProducer<T extends Message> {
     public void close() {
         if (producer != null) {
             producer.close();
+            System.out.println("Kafka producer closed.");
         }
     }
 }

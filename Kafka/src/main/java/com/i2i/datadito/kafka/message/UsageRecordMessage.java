@@ -60,4 +60,16 @@ public class UsageRecordMessage implements Message {
     public void setUsageDate(Timestamp usageDate) {
         this.usageDate = usageDate;
     }
+
+    @Override
+    public String toString() {
+        return "UsageRecordMessage{" +
+                "callerMsisdn='" + callerMsisdn + '\'' +
+                ", calleeMsisdn='" + calleeMsisdn + '\'' +
+                ", usageType=" + usageType +
+                ", usageDuration=" + usageDuration +
+                ", usageDate=" + usageDate +
+                '}';
+    }
+
 }
