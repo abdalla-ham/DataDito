@@ -1,4 +1,4 @@
-package com.i2i.datadito.ABMF;
+package com.i2i.datadito.abmf;
 
 import com.i2i.datadito.kafka.message.BalanceMessage;
 import org.apache.logging.log4j.LogManager;
