@@ -1,0 +1,13 @@
+C:\Users\sucevm\Desktop\DataDito\DataDito\bin\Release\DataDito.exe.config
+C:\Users\sucevm\Desktop\DataDito\DataDito\bin\Release\DataDito.exe
+C:\Users\sucevm\Desktop\DataDito\DataDito\bin\Release\DataDito.pdb
+C:\Users\sucevm\Desktop\DataDito\DataDito\bin\Release\Newtonsoft.Json.dll
+C:\Users\sucevm\Desktop\DataDito\DataDito\bin\Release\Newtonsoft.Json.xml
+C:\Users\sucevm\Desktop\DataDito\DataDito\obj\Release\DataDito.csproj.AssemblyReference.cache
+C:\Users\sucevm\Desktop\DataDito\DataDito\obj\Release\DataDito.LoginPage.resources
+C:\Users\sucevm\Desktop\DataDito\DataDito\obj\Release\DataDito.Properties.Resources.resources
+C:\Users\sucevm\Desktop\DataDito\DataDito\obj\Release\DataDito.csproj.GenerateResource.cache
+C:\Users\sucevm\Desktop\DataDito\DataDito\obj\Release\DataDito.csproj.CoreCompileInputs.cache
+C:\Users\sucevm\Desktop\DataDito\DataDito\obj\Release\DataDito.csproj.Up2Date
+C:\Users\sucevm\Desktop\DataDito\DataDito\obj\Release\DataDito.exe
+C:\Users\sucevm\Desktop\DataDito\DataDito\obj\Release\DataDito.pdb
