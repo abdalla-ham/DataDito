@@ -1,4 +1,4 @@
-package com.i2i.datadito.abmf;
+package com.i2i.datadito.ABMF;
 
 import java.io.IOException;
 import java.io.InputStream;

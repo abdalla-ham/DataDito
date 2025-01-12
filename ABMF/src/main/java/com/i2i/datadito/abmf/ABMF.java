@@ -1,4 +1,4 @@
-package com.i2i.datadito.abmf;
+package com.i2i.datadito.ABMF;
 
 import com.i2i.datadito.kafka.Subscriber;
 import org.apache.kafka.clients.consumer.ConsumerRecord;

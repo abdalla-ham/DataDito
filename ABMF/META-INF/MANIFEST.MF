@@ -1,2 +1,2 @@
 Manifest-Version: 1.0
-Main-Class: com.i2i.datadito.abmf.Main
+Main-Class: com.i2i.datadito.ABMF.ABMF
